@@ -1,0 +1,1803 @@
+Xshell 7 (Build 0144)
+Copyright (c) 2020 NetSarang Computer, Inc. All rights reserved.
+
+Type `help' to learn how to use Xshell prompt.
+[C:\~]$ 
+
+Connecting to 172.25.3.11:22...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+
+Activate the web console with: systemctl enable --now cockpit.socket
+
+Last login: Tue Jan  2 09:34:58 2024 from 172.25.3.1
+[root@linux-1 ~]# cd
+[root@linux-1 ~]# config
+bash: config: command not found...
+[root@linux-1 ~]# c
+[root@linux-1 ~]# ls /etc/passwd /etc/shadow /etc/gr
+groff/     group      group-     grub.d/    grub2.cfg  
+[root@linux-1 ~]# ls /etc/passwd /etc/shadow /etc/group
+/etc/group  /etc/passwd  /etc/shadow
+[root@linux-1 ~]# ls -s /etc/passwd /etc/shadow /etc/group
+4 /etc/group  4 /etc/passwd  4 /etc/shadow
+[root@linux-1 ~]# ls -ls /etc/passwd /etc/shadow /etc/group
+4 -rw-r--r--. 1 root root  821 12월 27 17:52 /etc/group
+4 -rw-r--r--. 1 root root 2113 12월 29 15:51 /etc/passwd
+4 ----------. 1 root root 1134 12월 27 17:52 /etc/shadow
+[root@linux-1 ~]# c
+[root@linux-1 ~]# head -n 5 /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+[root@linux-1 ~]# head -n 5 /etc/passwd | cat -n
+     1	root:x:0:0:root:/root:/bin/bash
+     2	bin:x:1:1:bin:/bin:/sbin/nologin
+     3	daemon:x:2:2:daemon:/sbin:/sbin/nologin
+     4	adm:x:3:4:adm:/var/adm:/sbin/nologin
+     5	lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+[root@linux-1 ~]# head -5 /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+[root@linux-1 ~]# head -5 /etc/passwd | cat -n
+     1	root:x:0:0:root:/root:/bin/bash
+     2	bin:x:1:1:bin:/bin:/sbin/nologin
+     3	daemon:x:2:2:daemon:/sbin:/sbin/nologin
+     4	adm:x:3:4:adm:/var/adm:/sbin/nologin
+     5	lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+[root@linux-1 ~]# head -5 /etc/passwd | cat -n | tail -5 /etc/shadow
+sshd:!!:19718::::::
+chrony:!!:19718::::::
+dnsmasq:!!:19718::::::
+tcpdump:!!:19718::::::
+student:$6$Nl4guuE1uUiibjug$pa6mDAQJQzYxg6a61ZhoiET7LBpIOm9lW3nEAYDPL.oL9J/do9j7yme2cGamncwywJr5cjQtVD42HULXnidfa0::0:99999:7:::
+[root@linux-1 ~]# head -5 /etc/passwd | cat -n | tail -5 /etc/shadow/
+tail: cannot open '/etc/shadow/' for reading: 디렉터리가 아닙니다
+[root@linux-1 ~]# c
+[root@linux-1 ~]# head -3 /etc/passwd / etc/shadow
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+==> / <==
+head: '/'을(를) 읽는 도중 오류 발생: 디렉터리입니다
+head: cannot open 'etc/shadow' for reading: 그런 파일이나 디렉터리가 없습니다
+[root@linux-1 ~]# head -3 /etc/passwd /etc/shadow
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+==> /etc/shadow <==
+root:$6$PCVhhWSC/RrnYFZS$5NYKtUnZXOIqhk5X5HaLrFujiYdXQmD3ZWA2R1XLMBtJIq61oW0XMvQ8jzTepa3GEKDBa0L8lI7NhUlh6PnOL.::0:99999:7:::
+bin:*:19469:0:99999:7:::
+daemon:*:19469:0:99999:7:::
+[root@linux-1 ~]# head -3 /etc/passwd /etc/shadow | cat -n
+     1	==> /etc/passwd <==
+     2	root:x:0:0:root:/root:/bin/bash
+     3	bin:x:1:1:bin:/bin:/sbin/nologin
+     4	daemon:x:2:2:daemon:/sbin:/sbin/nologin
+     5	
+     6	==> /etc/shadow <==
+     7	root:$6$PCVhhWSC/RrnYFZS$5NYKtUnZXOIqhk5X5HaLrFujiYdXQmD3ZWA2R1XLMBtJIq61oW0XMvQ8jzTepa3GEKDBa0L8lI7NhUlh6PnOL.::0:99999:7:::
+     8	bin:*:19469:0:99999:7:::
+     9	daemon:*:19469:0:99999:7:::
+[root@linux-1 ~]# c
+[root@linux-1 ~]# tail --help
+사용법: tail [<옵션>]... [<파일>]...
+Print the last 10 lines of each FILE to standard output.
+With more than one FILE, precede each with a header giving the file name.
+
+<파일>이 주어지지 않거나 - 이면 표준 입력을 읽습니다.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -c, --bytes=[+]NUM       output the last NUM bytes; or use -c +NUM to
+                             output starting with byte NUM of each file
+  -f, --follow[={name|descriptor}]
+                           output appended data as the file grows;
+                             an absent option argument means 'descriptor'
+  -F                       same as --follow=name --retry
+  -n, --lines=[+]NUM       output the last NUM lines, instead of the last 10;
+                             or use -n +NUM to output starting with line NUM
+      --max-unchanged-stats=N
+                           with --follow=name, reopen a FILE which has not
+                             changed size after N (default 5) iterations
+                             to see if it has been unlinked or renamed
+                             (this is the usual case of rotated log files);
+                             with inotify, this option is rarely useful
+      --pid=PID            with -f, terminate after process ID, PID dies
+  -q, --quiet, --silent    never output headers giving file names
+      --retry              keep trying to open a file if it is inaccessible
+  -s, --sleep-interval=N   with -f, sleep for approximately N seconds
+                             (default 1.0) between iterations;
+                             with inotify and --pid=P, check process P at
+                             least once every N seconds
+  -v, --verbose            always output headers giving file names
+  -z, --zero-terminated    line delimiter is NUL, not newline
+      --help     이 도움말을 표시하고 끝냅니다
+      --version  버전 정보를 출력하고 끝냅니다
+
+NUM may have a multiplier suffix:
+b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
+GB 1000*1000*1000, G 1024*1024*1024, and so on for T, P, E, Z, Y.
+Binary prefixes can be used, too: KiB=K, MiB=M, and so on.
+
+With --follow (-f), tail defaults to following the file descriptor, which
+means that even if a tail'ed file is renamed, tail will continue to track
+its end.  This default behavior is not desirable when you really want to
+track the actual name of the file, not the file descriptor (e.g., log
+rotation).  Use --follow=name in that case.  That causes tail to track the
+named file in a way that accommodates renaming, removal and creation.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/tail>
+or available locally via: info '(coreutils) tail invocation'
+[root@linux-1 ~]# c
+[root@linux-1 ~]# cat -n /etc/passwd
+     1	root:x:0:0:root:/root:/bin/bash
+     2	bin:x:1:1:bin:/bin:/sbin/nologin
+     3	daemon:x:2:2:daemon:/sbin:/sbin/nologin
+     4	adm:x:3:4:adm:/var/adm:/sbin/nologin
+     5	lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+     6	sync:x:5:0:sync:/sbin:/bin/sync
+     7	shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+     8	halt:x:7:0:halt:/sbin:/sbin/halt
+     9	mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+    10	operator:x:11:0:operator:/root:/sbin/nologin
+    11	games:x:12:100:games:/usr/games:/sbin/nologin
+    12	ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+    13	nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+    14	systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+    15	dbus:x:81:81:System message bus:/:/sbin/nologin
+    16	polkitd:x:998:996:User for polkitd:/:/sbin/nologin
+    17	avahi:x:70:70:Avahi mDNS/DNS-SD Stack:/var/run/avahi-daemon:/sbin/nologin
+    18	rtkit:x:172:172:RealtimeKit:/proc:/sbin/nologin
+    19	pipewire:x:997:993:PipeWire System Daemon:/var/run/pipewire:/sbin/nologin
+    20	sssd:x:996:992:User for sssd:/:/sbin/nologin
+    21	libstoragemgmt:x:990:990:daemon account for libstoragemgmt:/:/usr/sbin/nologin
+    22	systemd-oom:x:989:989:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+    23	tss:x:59:59:Account used for TPM access:/:/usr/sbin/nologin
+    24	geoclue:x:988:987:User for geoclue:/var/lib/geoclue:/sbin/nologin
+    25	cockpit-ws:x:987:986:User for cockpit web service:/nonexisting:/sbin/nologin
+    26	cockpit-wsinstance:x:986:985:User for cockpit-ws instances:/nonexisting:/sbin/nologin
+    27	flatpak:x:985:984:User for flatpak system helper:/:/sbin/nologin
+    28	colord:x:984:983:User for colord:/var/lib/colord:/sbin/nologin
+    29	clevis:x:983:982:Clevis Decryption Framework unprivileged user:/var/cache/clevis:/usr/sbin/nologin
+    30	setroubleshoot:x:982:981:SELinux troubleshoot server:/var/lib/setroubleshoot:/usr/sbin/nologin
+    31	gdm:x:42:42::/var/lib/gdm:/sbin/nologin
+    32	gnome-initial-setup:x:981:980::/run/gnome-initial-setup/:/sbin/nologin
+    33	sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+    34	chrony:x:980:979:chrony system user:/var/lib/chrony:/sbin/nologin
+    35	dnsmasq:x:979:978:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+    36	tcpdump:x:72:72::/:/sbin/nologin
+    37	student:x:1000:1000:student:/home/student:/bin/bash
+[root@linux-1 ~]# tail --help
+사용법: tail [<옵션>]... [<파일>]...
+Print the last 10 lines of each FILE to standard output.
+With more than one FILE, precede each with a header giving the file name.
+
+<파일>이 주어지지 않거나 - 이면 표준 입력을 읽습니다.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -c, --bytes=[+]NUM       output the last NUM bytes; or use -c +NUM to
+                             output starting with byte NUM of each file
+  -f, --follow[={name|descriptor}]
+                           output appended data as the file grows;
+                             an absent option argument means 'descriptor'
+  -F                       same as --follow=name --retry
+  -n, --lines=[+]NUM       output the last NUM lines, instead of the last 10;
+                             or use -n +NUM to output starting with line NUM
+      --max-unchanged-stats=N
+                           with --follow=name, reopen a FILE which has not
+                             changed size after N (default 5) iterations
+                             to see if it has been unlinked or renamed
+                             (this is the usual case of rotated log files);
+                             with inotify, this option is rarely useful
+      --pid=PID            with -f, terminate after process ID, PID dies
+  -q, --quiet, --silent    never output headers giving file names
+      --retry              keep trying to open a file if it is inaccessible
+  -s, --sleep-interval=N   with -f, sleep for approximately N seconds
+                             (default 1.0) between iterations;
+                             with inotify and --pid=P, check process P at
+                             least once every N seconds
+  -v, --verbose            always output headers giving file names
+  -z, --zero-terminated    line delimiter is NUL, not newline
+      --help     이 도움말을 표시하고 끝냅니다
+      --version  버전 정보를 출력하고 끝냅니다
+
+NUM may have a multiplier suffix:
+b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
+GB 1000*1000*1000, G 1024*1024*1024, and so on for T, P, E, Z, Y.
+Binary prefixes can be used, too: KiB=K, MiB=M, and so on.
+
+With --follow (-f), tail defaults to following the file descriptor, which
+means that even if a tail'ed file is renamed, tail will continue to track
+its end.  This default behavior is not desirable when you really want to
+track the actual name of the file, not the file descriptor (e.g., log
+rotation).  Use --follow=name in that case.  That causes tail to track the
+named file in a way that accommodates renaming, removal and creation.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/tail>
+or available locally via: info '(coreutils) tail invocation'
+[root@linux-1 ~]# c
+[root@linux-1 ~]# tail --help | grep -A 2  "\-n"
+  -n, --lines=[+]NUM       output the last NUM lines, instead of the last 10;
+                             or use -n +NUM to output starting with line NUM
+      --max-unchanged-stats=N
+                           with --follow=name, reopen a FILE which has not
+[root@linux-1 ~]# tail --help | grep   "\-n"
+  -n, --lines=[+]NUM       output the last NUM lines, instead of the last 10;
+                             or use -n +NUM to output starting with line NUM
+[root@linux-1 ~]# cat -n /etc/passwd | tail -n +33
+    33	sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+    34	chrony:x:980:979:chrony system user:/var/lib/chrony:/sbin/nologin
+    35	dnsmasq:x:979:978:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+    36	tcpdump:x:72:72::/:/sbin/nologin
+    37	student:x:1000:1000:student:/home/student:/bin/bash
+[root@linux-1 ~]# cat -n /etc/passwd | tail -n +30
+    30	setroubleshoot:x:982:981:SELinux troubleshoot server:/var/lib/setroubleshoot:/usr/sbin/nologin
+    31	gdm:x:42:42::/var/lib/gdm:/sbin/nologin
+    32	gnome-initial-setup:x:981:980::/run/gnome-initial-setup/:/sbin/nologin
+    33	sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+    34	chrony:x:980:979:chrony system user:/var/lib/chrony:/sbin/nologin
+    35	dnsmasq:x:979:978:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+    36	tcpdump:x:72:72::/:/sbin/nologin
+    37	student:x:1000:1000:student:/home/student:/bin/bash
+[root@linux-1 ~]# cat -n /etc/passwd | tail -n -10
+    28	colord:x:984:983:User for colord:/var/lib/colord:/sbin/nologin
+    29	clevis:x:983:982:Clevis Decryption Framework unprivileged user:/var/cache/clevis:/usr/sbin/nologin
+    30	setroubleshoot:x:982:981:SELinux troubleshoot server:/var/lib/setroubleshoot:/usr/sbin/nologin
+    31	gdm:x:42:42::/var/lib/gdm:/sbin/nologin
+    32	gnome-initial-setup:x:981:980::/run/gnome-initial-setup/:/sbin/nologin
+    33	sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+    34	chrony:x:980:979:chrony system user:/var/lib/chrony:/sbin/nologin
+    35	dnsmasq:x:979:978:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+    36	tcpdump:x:72:72::/:/sbin/nologin
+    37	student:x:1000:1000:student:/home/student:/bin/bash
+[root@linux-1 ~]# cat -n /etc/passwd | tail -n 10
+    28	colord:x:984:983:User for colord:/var/lib/colord:/sbin/nologin
+    29	clevis:x:983:982:Clevis Decryption Framework unprivileged user:/var/cache/clevis:/usr/sbin/nologin
+    30	setroubleshoot:x:982:981:SELinux troubleshoot server:/var/lib/setroubleshoot:/usr/sbin/nologin
+    31	gdm:x:42:42::/var/lib/gdm:/sbin/nologin
+    32	gnome-initial-setup:x:981:980::/run/gnome-initial-setup/:/sbin/nologin
+    33	sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+    34	chrony:x:980:979:chrony system user:/var/lib/chrony:/sbin/nologin
+    35	dnsmasq:x:979:978:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+    36	tcpdump:x:72:72::/:/sbin/nologin
+    37	student:x:1000:1000:student:/home/student:/bin/bash
+[root@linux-1 ~]# cat -n /etc/passwd | tail -n -10
+    28	colord:x:984:983:User for colord:/var/lib/colord:/sbin/nologin
+    29	clevis:x:983:982:Clevis Decryption Framework unprivileged user:/var/cache/clevis:/usr/sbin/nologin
+    30	setroubleshoot:x:982:981:SELinux troubleshoot server:/var/lib/setroubleshoot:/usr/sbin/nologin
+    31	gdm:x:42:42::/var/lib/gdm:/sbin/nologin
+    32	gnome-initial-setup:x:981:980::/run/gnome-initial-setup/:/sbin/nologin
+    33	sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+    34	chrony:x:980:979:chrony system user:/var/lib/chrony:/sbin/nologin
+    35	dnsmasq:x:979:978:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+    36	tcpdump:x:72:72::/:/sbin/nologin
+    37	student:x:1000:1000:student:/home/student:/bin/bash
+[root@linux-1 ~]# c
+[root@linux-1 ~]# cat -n /etc/passwd | tail -n +33
+    33	sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+    34	chrony:x:980:979:chrony system user:/var/lib/chrony:/sbin/nologin
+    35	dnsmasq:x:979:978:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+    36	tcpdump:x:72:72::/:/sbin/nologin
+    37	student:x:1000:1000:student:/home/student:/bin/bash
+[root@linux-1 ~]# cat -n /etc/passwd | tail -n +20
+    20	sssd:x:996:992:User for sssd:/:/sbin/nologin
+    21	libstoragemgmt:x:990:990:daemon account for libstoragemgmt:/:/usr/sbin/nologin
+    22	systemd-oom:x:989:989:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+    23	tss:x:59:59:Account used for TPM access:/:/usr/sbin/nologin
+    24	geoclue:x:988:987:User for geoclue:/var/lib/geoclue:/sbin/nologin
+    25	cockpit-ws:x:987:986:User for cockpit web service:/nonexisting:/sbin/nologin
+    26	cockpit-wsinstance:x:986:985:User for cockpit-ws instances:/nonexisting:/sbin/nologin
+    27	flatpak:x:985:984:User for flatpak system helper:/:/sbin/nologin
+    28	colord:x:984:983:User for colord:/var/lib/colord:/sbin/nologin
+    29	clevis:x:983:982:Clevis Decryption Framework unprivileged user:/var/cache/clevis:/usr/sbin/nologin
+    30	setroubleshoot:x:982:981:SELinux troubleshoot server:/var/lib/setroubleshoot:/usr/sbin/nologin
+    31	gdm:x:42:42::/var/lib/gdm:/sbin/nologin
+    32	gnome-initial-setup:x:981:980::/run/gnome-initial-setup/:/sbin/nologin
+    33	sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+    34	chrony:x:980:979:chrony system user:/var/lib/chrony:/sbin/nologin
+    35	dnsmasq:x:979:978:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+    36	tcpdump:x:72:72::/:/sbin/nologin
+    37	student:x:1000:1000:student:/home/student:/bin/bash
+[root@linux-1 ~]# c
+[root@linux-1 ~]# cat -n /etc/passwd | head -n +20
+     1	root:x:0:0:root:/root:/bin/bash
+     2	bin:x:1:1:bin:/bin:/sbin/nologin
+     3	daemon:x:2:2:daemon:/sbin:/sbin/nologin
+     4	adm:x:3:4:adm:/var/adm:/sbin/nologin
+     5	lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+     6	sync:x:5:0:sync:/sbin:/bin/sync
+     7	shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+     8	halt:x:7:0:halt:/sbin:/sbin/halt
+     9	mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+    10	operator:x:11:0:operator:/root:/sbin/nologin
+    11	games:x:12:100:games:/usr/games:/sbin/nologin
+    12	ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+    13	nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+    14	systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+    15	dbus:x:81:81:System message bus:/:/sbin/nologin
+    16	polkitd:x:998:996:User for polkitd:/:/sbin/nologin
+    17	avahi:x:70:70:Avahi mDNS/DNS-SD Stack:/var/run/avahi-daemon:/sbin/nologin
+    18	rtkit:x:172:172:RealtimeKit:/proc:/sbin/nologin
+    19	pipewire:x:997:993:PipeWire System Daemon:/var/run/pipewire:/sbin/nologin
+    20	sssd:x:996:992:User for sssd:/:/sbin/nologin
+[root@linux-1 ~]# ip ad
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens160: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:0c:29:01:c8:c8 brd ff:ff:ff:ff:ff:ff
+    altname enp3s0
+    inet 172.25.3.11/24 brd 172.25.3.255 scope global noprefixroute ens160
+       valid_lft forever preferred_lft forever
+    inet6 fe80::20c:29ff:fe01:c8c8/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+[root@linux-1 ~]# route id
+Usage: route [-nNvee] [-FC] [<AF>]           List kernel routing tables
+       route [-v] [-FC] {add|del|flush} ...  Modify routing table for AF.
+
+       route {-h|--help} [<AF>]              Detailed usage syntax for specified AF.
+       route {-V|--version}                  Display version/author and exit.
+
+        -v, --verbose            be verbose
+        -n, --numeric            don't resolve names
+        -e, --extend             display other/more information
+        -F, --fib                display Forwarding Information Base (default)
+        -C, --cache              display routing cache instead of FIB
+
+  <AF>=Use -4, -6, '-A <af>' or '--<af>'; default: inet
+  List of possible address families (which support routing):
+    inet (DARPA Internet) inet6 (IPv6) ax25 (AMPR AX.25) 
+    netrom (AMPR NET/ROM) ipx (Novell IPX) ddp (Appletalk DDP) 
+    x25 (CCITT X.25) 
+[root@linux-1 ~]# id route
+id: `route': no such user
+[root@linux-1 ~]# route ip
+Usage: route [-nNvee] [-FC] [<AF>]           List kernel routing tables
+       route [-v] [-FC] {add|del|flush} ...  Modify routing table for AF.
+
+       route {-h|--help} [<AF>]              Detailed usage syntax for specified AF.
+       route {-V|--version}                  Display version/author and exit.
+
+        -v, --verbose            be verbose
+        -n, --numeric            don't resolve names
+        -e, --extend             display other/more information
+        -F, --fib                display Forwarding Information Base (default)
+        -C, --cache              display routing cache instead of FIB
+
+  <AF>=Use -4, -6, '-A <af>' or '--<af>'; default: inet
+  List of possible address families (which support routing):
+    inet (DARPA Internet) inet6 (IPv6) ax25 (AMPR AX.25) 
+    netrom (AMPR NET/ROM) ipx (Novell IPX) ddp (Appletalk DDP) 
+    x25 (CCITT X.25) 
+[root@linux-1 ~]# c
+[root@linux-1 ~]# cat -n /etc/default/useradd 
+     1	# useradd defaults file
+     2	GROUP=100
+     3	HOME=/home
+     4	INACTIVE=-1
+     5	EXPIRE=
+     6	SHELL=/bin/bash
+     7	SKEL=/etc/skel
+     8	CREATE_MAIL_SPOOL=yes
+     9	
+[root@linux-1 ~]# c
+[root@linux-1 ~]# cat -n /etc/group
+     1	root:x:0:
+     2	bin:x:1:
+     3	daemon:x:2:
+     4	sys:x:3:
+     5	adm:x:4:
+     6	tty:x:5:
+     7	disk:x:6:
+     8	lp:x:7:
+     9	mem:x:8:
+    10	kmem:x:9:
+    11	wheel:x:10:student
+    12	cdrom:x:11:
+    13	mail:x:12:
+    14	man:x:15:
+    15	dialout:x:18:
+    16	floppy:x:19:
+    17	games:x:20:
+    18	tape:x:33:
+    19	video:x:39:
+    20	ftp:x:50:
+    21	lock:x:54:
+    22	audio:x:63:
+    23	users:x:100:
+    24	nobody:x:65534:
+    25	utmp:x:22:
+    26	utempter:x:35:
+    27	input:x:999:
+    28	kvm:x:36:
+    29	render:x:998:
+    30	systemd-journal:x:190:
+    31	systemd-coredump:x:997:
+    32	dbus:x:81:
+    33	polkitd:x:996:
+    34	avahi:x:70:
+    35	printadmin:x:995:
+    36	ssh_keys:x:994:
+    37	rtkit:x:172:
+    38	pipewire:x:993:
+    39	sssd:x:992:
+    40	sgx:x:991:
+    41	libstoragemgmt:x:990:
+    42	systemd-oom:x:989:
+    43	brlapi:x:988:
+    44	tss:x:59:clevis
+    45	geoclue:x:987:
+    46	cockpit-ws:x:986:
+    47	cockpit-wsinstance:x:985:
+    48	flatpak:x:984:
+    49	colord:x:983:
+    50	clevis:x:982:
+    51	setroubleshoot:x:981:
+    52	gdm:x:42:
+    53	gnome-initial-setup:x:980:
+    54	sshd:x:74:
+    55	slocate:x:21:
+    56	chrony:x:979:
+    57	dnsmasq:x:978:
+    58	tcpdump:x:72:
+    59	student:x:1000:
+[root@linux-1 ~]# c
+[root@linux-1 ~]# cat -n /etc/group
+     1	root:x:0:
+     2	bin:x:1:
+     3	daemon:x:2:
+     4	sys:x:3:
+     5	adm:x:4:
+     6	tty:x:5:
+     7	disk:x:6:
+     8	lp:x:7:
+     9	mem:x:8:
+    10	kmem:x:9:
+    11	wheel:x:10:student
+    12	cdrom:x:11:
+    13	mail:x:12:
+    14	man:x:15:
+    15	dialout:x:18:
+    16	floppy:x:19:
+    17	games:x:20:
+    18	tape:x:33:
+    19	video:x:39:
+    20	ftp:x:50:
+    21	lock:x:54:
+    22	audio:x:63:
+    23	users:x:100:
+    24	nobody:x:65534:
+    25	utmp:x:22:
+    26	utempter:x:35:
+    27	input:x:999:
+    28	kvm:x:36:
+    29	render:x:998:
+    30	systemd-journal:x:190:
+    31	systemd-coredump:x:997:
+    32	dbus:x:81:
+    33	polkitd:x:996:
+    34	avahi:x:70:
+    35	printadmin:x:995:
+    36	ssh_keys:x:994:
+    37	rtkit:x:172:
+    38	pipewire:x:993:
+    39	sssd:x:992:
+    40	sgx:x:991:
+    41	libstoragemgmt:x:990:
+    42	systemd-oom:x:989:
+    43	brlapi:x:988:
+    44	tss:x:59:clevis
+    45	geoclue:x:987:
+    46	cockpit-ws:x:986:
+    47	cockpit-wsinstance:x:985:
+    48	flatpak:x:984:
+    49	colord:x:983:
+    50	clevis:x:982:
+    51	setroubleshoot:x:981:
+    52	gdm:x:42:
+    53	gnome-initial-setup:x:980:
+    54	sshd:x:74:
+    55	slocate:x:21:
+    56	chrony:x:979:
+    57	dnsmasq:x:978:
+    58	tcpdump:x:72:
+    59	student:x:1000:
+[root@linux-1 ~]# c
+[root@linux-1 ~]# useradd user1
+[root@linux-1 ~]# ls -ls /home
+합계 4
+4 drwx------. 14 student student 4096 12월 28 13:08 student
+0 drwx------.  3 user1   user1     78  1월  2 10:35 user1
+[root@linux-1 ~]# tail -1 /etc/passwd /etc/shadow /etc/group
+tail: option used in invalid context -- 1
+[root@linux-1 ~]# tail -n -1 /etc/passwd /etc/shadow /etc/group
+==> /etc/passwd <==
+user1:x:1001:1001::/home/user1:/bin/bash
+
+==> /etc/shadow <==
+user1:!!:19724:0:99999:7:::
+
+==> /etc/group <==
+user1:x:1001:
+[root@linux-1 ~]# tail -n 1 /etc/passwd /etc/shadow /etc/group
+==> /etc/passwd <==
+user1:x:1001:1001::/home/user1:/bin/bash
+
+==> /etc/shadow <==
+user1:!!:19724:0:99999:7:::
+
+==> /etc/group <==
+user1:x:1001:
+[root@linux-1 ~]# head -n 1 /etc/passwd /etc/shadow /etc/group
+==> /etc/passwd <==
+root:x:0:0:root:/root:/bin/bash
+
+==> /etc/shadow <==
+root:$6$PCVhhWSC/RrnYFZS$5NYKtUnZXOIqhk5X5HaLrFujiYdXQmD3ZWA2R1XLMBtJIq61oW0XMvQ8jzTepa3GEKDBa0L8lI7NhUlh6PnOL.::0:99999:7:::
+
+==> /etc/group <==
+root:x:0:
+[root@linux-1 ~]# c
+[root@linux-1 ~]# tail -n 1 /etc/passwd /etc/shadow /etc/group
+==> /etc/passwd <==
+user1:x:1001:1001::/home/user1:/bin/bash
+
+==> /etc/shadow <==
+user1:!!:19724:0:99999:7:::
+
+==> /etc/group <==
+user1:x:1001:
+[root@linux-1 ~]# passwd  --help 
+사용법: passwd [옵션...] <accountName>
+  -k, --keep-tokens       만기되지 않는 인증 토큰 사용
+  -d, --delete            이름이 지정된 계정의 비밀 번호를
+                          삭제하기 (root로만 실행 가능); 존재하는
+                          비밀번호 잠금도 해제됩니다 
+  -l, --lock              이름이 지정된 계정의 비밀 번호를
+                          잠그기 (root로만 실행 가능) 
+  -u, --unlock            이름이 지정된 계정의 비밀번호를 잠금
+                          해제하기 (root로만 실행 가능)  
+  -e, --expire            이름이 지정된 계정의 비밀 번호
+                          만료시키기 (root로만 실행 가능) 
+  -f, --force             강제로 실행하기
+  -x, --maximum=DAYS      비밀번호 최대 유효기간 (root로만 실행
+                          가능)
+  -n, --minimum=DAYS      비밀번호 최소 유효기간 (root로만 실행
+                          가능)
+  -w, --warning=DAYS      비밀번호가 만료되기 전 사용자에게
+                          주어지는 경고 기간 (root로만 실행 가능)
+  -i, --inactive=DAYS     비밀번호 만료 후 계정이 비활성화되는
+                          기간 (root로만 실행 가능)
+  -S, --status            named 계정에 비밀 번호 상태 보고하기
+                          (root로만 실행 가능)
+      --stdin             stdin에서 새 토큰을 읽기 (root로만 실행
+                          가능)
+
+Help options:
+  -?, --help              이 도움말을 보여줍니다
+      --usage             간단한 사용법을 보여줍니다
+[root@linux-1 ~]# c
+[root@linux-1 ~]# passwd --help | -3
+bash: -3: command not found...
+[root@linux-1 ~]# passwd --help |head -3
+사용법: passwd [옵션...] <accountName>
+  -k, --keep-tokens       만기되지 않는 인증 토큰 사용
+  -d, --delete            이름이 지정된 계정의 비밀 번호를
+[root@linux-1 ~]# passwd user1
+user1 사용자의 비밀 번호 변경 중
+새 암호:
+잘못된 암호: 암호가 앞뒤 어느쪽에서 읽어도 같은 문맥임
+새 암호 재입력:
+passwd: 모든 인증 토큰이 성공적으로 업데이트 되었습니다.
+[root@linux-1 ~]# tail  1 /etc/passwd /etc/shadow
+tail: cannot open '1' for reading: 그런 파일이나 디렉터리가 없습니다
+==> /etc/passwd <==
+clevis:x:983:982:Clevis Decryption Framework unprivileged user:/var/cache/clevis:/usr/sbin/nologin
+setroubleshoot:x:982:981:SELinux troubleshoot server:/var/lib/setroubleshoot:/usr/sbin/nologin
+gdm:x:42:42::/var/lib/gdm:/sbin/nologin
+gnome-initial-setup:x:981:980::/run/gnome-initial-setup/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+chrony:x:980:979:chrony system user:/var/lib/chrony:/sbin/nologin
+dnsmasq:x:979:978:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+student:x:1000:1000:student:/home/student:/bin/bash
+user1:x:1001:1001::/home/user1:/bin/bash
+
+==> /etc/shadow <==
+clevis:!!:19718::::::
+setroubleshoot:!!:19718::::::
+gdm:!!:19718::::::
+gnome-initial-setup:!!:19718::::::
+sshd:!!:19718::::::
+chrony:!!:19718::::::
+dnsmasq:!!:19718::::::
+tcpdump:!!:19718::::::
+student:$6$Nl4guuE1uUiibjug$pa6mDAQJQzYxg6a61ZhoiET7LBpIOm9lW3nEAYDPL.oL9J/do9j7yme2cGamncwywJr5cjQtVD42HULXnidfa0::0:99999:7:::
+user1:$6$cQW0XkIpftOHgitG$tgg1QFIxzGEJNU9Wx9Dvy3aW4N2n2WvHlfhvorVdi4ARg9gVwOV.ihL08aaQVjvhQb79PXaEIjWj9raGGLT0e0:19724:0:99999:7:::
+[root@linux-1 ~]# tail  -1 /etc/passwd /etc/shadow
+tail: option used in invalid context -- 1
+[root@linux-1 ~]# /c
+-bash: /c: 그런 파일이나 디렉터리가 없습니다
+[root@linux-1 ~]# c
+[root@linux-1 ~]# tail  -1 /etc/passwd /etc/shadow
+tail: option used in invalid context -- 1
+[root@linux-1 ~]# tail  -n -1 /etc/passwd /etc/shadow
+==> /etc/passwd <==
+user1:x:1001:1001::/home/user1:/bin/bash
+
+==> /etc/shadow <==
+user1:$6$cQW0XkIpftOHgitG$tgg1QFIxzGEJNU9Wx9Dvy3aW4N2n2WvHlfhvorVdi4ARg9gVwOV.ihL08aaQVjvhQb79PXaEIjWj9raGGLT0e0:19724:0:99999:7:::
+[root@linux-1 ~]# su -user2
+Try 'su --help' for more information.
+[root@linux-1 ~]# su - user2
+su: user user2 does not exist or the user entry does not contain all the required fields
+[root@linux-1 ~]# su - user1
+[user1@linux-1 ~]$ su - root
+암호:
+[root@linux-1 ~]# su - student
+[student@linux-1 ~]$ su - root
+암호:
+[root@linux-1 ~]# su - user1
+[user1@linux-1 ~]$ pwd
+/home/user1
+[user1@linux-1 ~]$ exit
+로그아웃
+[root@linux-1 ~]# exit
+로그아웃
+[student@linux-1 ~]$ exit
+로그아웃
+[root@linux-1 ~]# exit
+로그아웃
+[user1@linux-1 ~]$ exit
+로그아웃
+[root@linux-1 ~]# exit
+로그아웃
+
+Connection closed.
+
+Disconnected from remote host(Linux-1) at 10:59:24.
+
+Type `help' to learn how to use Xshell prompt.
+[C:\~]$ 
+
+Connecting to 172.25.3.11:22...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+
+Activate the web console with: systemctl enable --now cockpit.socket
+
+Last login: Tue Jan  2 10:58:18 2024
+[root@linux-1 ~]# pwd
+/root
+[root@linux-1 ~]# su user1
+[user1@linux-1 root]$ pwd
+/root
+[user1@linux-1 root]$ exit
+exit
+[root@linux-1 ~]# su - user1
+[user1@linux-1 ~]$ pwd
+/home/user1
+[user1@linux-1 ~]$ c
+bash: c: command not found...
+[user1@linux-1 ~]$ c
+bash: c: command not found...
+[user1@linux-1 ~]$ vim .bashrc
+[user1@linux-1 ~]$ /clear
+-bash: /clear: 그런 파일이나 디렉터리가 없습니다
+[user1@linux-1 ~]$ clear
+[user1@linux-1 ~]$ tail -1 /etc/passwd
+user1:x:1001:1001::/home/user1:/bin/bash
+[user1@linux-1 ~]$ exit
+로그아웃
+[root@linux-1 ~]# c
+[root@linux-1 ~]# vim .bashrc
+[root@linux-1 ~]# vim /etc/passwd
+[root@linux-1 ~]# vim .bashrc
+[root@linux-1 ~]# tail  -1 /etc/passwd /etc/shadow
+tail: option used in invalid context -- 1
+[root@linux-1 ~]# tail  -1 /etc/passwd
+user1:x:1001:1001::/home/user111:/bin/bash
+[root@linux-1 ~]# su - user1
+su: warning: cannot change directory to /home/user111: 그런 파일이나 디렉터리가 없습니다
+[user1@linux-1 root]$ ls - l /home
+ls: cannot access '-': 허가 거부
+ls: cannot access 'l': 허가 거부
+/home:
+student  user1
+[user1@linux-1 root]$ exit
+로그아웃
+[root@linux-1 ~]# ls -l /home
+합계 8
+drwx------. 14 student student 4096 12월 28 13:08 student
+drwx------. 14 user1   user1   4096  1월  2 11:02 user1
+[root@linux-1 ~]# tail -1 /etc/passwd
+user1:x:1001:1001::/home/user111:/bin/bash
+[root@linux-1 ~]# vim /etc/passwd
+[root@linux-1 ~]# usermod -d /home/user1 user1
+usermod: user user1 is currently used by process 4180
+[root@linux-1 ~]# usermod -d /home/user1  user1
+usermod: user user1 is currently used by process 4180
+[root@linux-1 ~]# vim /etc/passwd
+[root@linux-1 ~]# tail -1 /etc/passwd
+user1:x:1001:1001::/home/user1:/bin/bash
+[root@linux-1 ~]# su - user1
+[user1@linux-1 ~]$ exit
+로그아웃
+[root@linux-1 ~]# mkdir -pv /bighome
+mkdir: created directory '/bighome'
+[root@linux-1 ~]# cd /bighome
+[root@linux-1 bighome]# pwd
+/bighome
+[root@linux-1 bighome]# useradd -d /bighome/user2 user2
+[root@linux-1 bighome]# ls -l
+합계 0
+drwx------. 3 user2 user2 78  1월  2 11:16 user2
+[root@linux-1 bighome]# pwd
+/bighome
+[root@linux-1 bighome]# ls -l /home /bighome/
+/bighome/:
+합계 0
+drwx------. 3 user2 user2 78  1월  2 11:16 user2
+
+/home:
+합계 8
+drwx------. 14 student student 4096 12월 28 13:08 student
+drwx------. 14 user1   user1   4096  1월  2 11:02 user1
+[root@linux-1 bighome]# ls -l /etc/default/useradd 
+-rw-r--r--. 1 root root 119 10월 31 04:54 /etc/default/useradd
+[root@linux-1 bighome]# vim /etc/default/useradd 
+[root@linux-1 bighome]# c
+[root@linux-1 bighome]# useradd user3
+[root@linux-1 bighome]# ls -l /bighome
+합계 0
+drwx------. 3 user2 user2 78  1월  2 11:16 user2
+drwx------. 3 user3 user3 78  1월  2 11:20 user3
+[root@linux-1 bighome]# vim /etc/default/useradd 
+[root@linux-1 bighome]# cd
+[root@linux-1 ~]# userdel -r user1
+userdel: user user1 is currently used by process 4180
+[root@linux-1 ~]# ls -l
+합계 84
+-rw-------. 1 root root  1008 12월 27 17:52 anaconda-ks.cfg
+-rw-r--r--. 1 root root 81569 12월 29 17:24 help.txt
+drwxr-xr-x. 2 root root     6 12월 29 13:11 test2023
+drwxr-xr-x. 2 root root     6 12월 27 17:57 공개
+drwxr-xr-x. 2 root root     6 12월 27 17:57 다운로드
+drwxr-xr-x. 2 root root     6 12월 27 17:57 문서
+drwxr-xr-x. 2 root root     6 12월 27 17:57 바탕화면
+drwxr-xr-x. 2 root root     6 12월 27 17:57 비디오
+drwxr-xr-x. 2 root root     6 12월 27 17:57 사진
+drwxr-xr-x. 2 root root     6 12월 27 17:57 서식
+drwxr-xr-x. 2 root root     6 12월 27 17:57 음악
+[root@linux-1 ~]# useradd user1
+useradd: 'user1' 사용자가 이미 있습니다
+[root@linux-1 ~]# c
+[root@linux-1 ~]# ls -l /root
+합계 84
+-rw-------. 1 root root  1008 12월 27 17:52 anaconda-ks.cfg
+-rw-r--r--. 1 root root 81569 12월 29 17:24 help.txt
+drwxr-xr-x. 2 root root     6 12월 29 13:11 test2023
+drwxr-xr-x. 2 root root     6 12월 27 17:57 공개
+drwxr-xr-x. 2 root root     6 12월 27 17:57 다운로드
+drwxr-xr-x. 2 root root     6 12월 27 17:57 문서
+drwxr-xr-x. 2 root root     6 12월 27 17:57 바탕화면
+drwxr-xr-x. 2 root root     6 12월 27 17:57 비디오
+drwxr-xr-x. 2 root root     6 12월 27 17:57 사진
+drwxr-xr-x. 2 root root     6 12월 27 17:57 서식
+drwxr-xr-x. 2 root root     6 12월 27 17:57 음악
+[root@linux-1 ~]# userdel -r user1
+userdel: user user1 is currently used by process 4180
+[root@linux-1 ~]# useradd user2
+useradd: 'user2' 사용자가 이미 있습니다
+[root@linux-1 ~]# userdel -r user2
+[root@linux-1 ~]# tail -5 /etc/passwd
+dnsmasq:x:979:978:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+student:x:1000:1000:student:/home/student:/bin/bash
+user1:x:1001:1001::/home/user1:/bin/bash
+user3:x:1003:1003::/bighome/user3:/bin/bash
+[root@linux-1 ~]# ls -l /home
+합계 8
+drwx------. 14 student student 4096 12월 28 13:08 student
+drwx------. 14 user1   user1   4096  1월  2 11:02 user1
+[root@linux-1 ~]# userdel -r user1
+userdel: user user1 is currently used by process 4180
+[root@linux-1 ~]# c
+[root@linux-1 ~]# ls -l /home
+합계 8
+drwx------. 14 student student 4096 12월 28 13:08 student
+drwx------. 14 user1   user1   4096  1월  2 11:02 user1
+[root@linux-1 ~]# userdel -r user1
+userdel: user user1 is currently used by process 4180
+[root@linux-1 ~]# rm -rvf /bighome/user1
+[root@linux-1 ~]# rm -rvf /user1
+[root@linux-1 ~]# ls -l
+합계 84
+-rw-------. 1 root root  1008 12월 27 17:52 anaconda-ks.cfg
+-rw-r--r--. 1 root root 81569 12월 29 17:24 help.txt
+drwxr-xr-x. 2 root root     6 12월 29 13:11 test2023
+drwxr-xr-x. 2 root root     6 12월 27 17:57 공개
+drwxr-xr-x. 2 root root     6 12월 27 17:57 다운로드
+drwxr-xr-x. 2 root root     6 12월 27 17:57 문서
+drwxr-xr-x. 2 root root     6 12월 27 17:57 바탕화면
+drwxr-xr-x. 2 root root     6 12월 27 17:57 비디오
+drwxr-xr-x. 2 root root     6 12월 27 17:57 사진
+drwxr-xr-x. 2 root root     6 12월 27 17:57 서식
+drwxr-xr-x. 2 root root     6 12월 27 17:57 음악
+[root@linux-1 ~]# ls -l /home
+합계 8
+drwx------. 14 student student 4096 12월 28 13:08 student
+drwx------. 14 user1   user1   4096  1월  2 11:02 user1
+[root@linux-1 ~]# rm -rvf /home/user1
+removed directory '/home/user1/.mozilla/extensions'
+removed directory '/home/user1/.mozilla/plugins'
+removed directory '/home/user1/.mozilla'
+removed '/home/user1/.bash_logout'
+removed '/home/user1/.bash_profile'
+removed '/home/user1/.bashrc'
+removed '/home/user1/.local/share/keyrings/login.keyring'
+removed '/home/user1/.local/share/keyrings/user.keystore'
+removed directory '/home/user1/.local/share/keyrings'
+removed '/home/user1/.local/share/gnome-shell/gnome-overrides-migrated'
+removed '/home/user1/.local/share/gnome-shell/notifications'
+removed directory '/home/user1/.local/share/gnome-shell'
+removed directory '/home/user1/.local/share/evolution/addressbook/trash'
+removed '/home/user1/.local/share/evolution/addressbook/system/contacts.db'
+removed directory '/home/user1/.local/share/evolution/addressbook/system/photos'
+removed directory '/home/user1/.local/share/evolution/addressbook/system'
+removed directory '/home/user1/.local/share/evolution/addressbook'
+removed directory '/home/user1/.local/share/evolution/calendar/trash'
+removed directory '/home/user1/.local/share/evolution/calendar/system'
+removed directory '/home/user1/.local/share/evolution/calendar'
+removed directory '/home/user1/.local/share/evolution/mail/trash'
+removed directory '/home/user1/.local/share/evolution/mail'
+removed directory '/home/user1/.local/share/evolution/memos/trash'
+removed directory '/home/user1/.local/share/evolution/memos'
+removed directory '/home/user1/.local/share/evolution/tasks/trash'
+removed '/home/user1/.local/share/evolution/tasks/system/tasks.ics'
+removed directory '/home/user1/.local/share/evolution/tasks/system'
+removed directory '/home/user1/.local/share/evolution/tasks'
+removed directory '/home/user1/.local/share/evolution'
+removed directory '/home/user1/.local/share/applications'
+removed directory '/home/user1/.local/share/sounds'
+removed directory '/home/user1/.local/share/flatpak/db'
+removed '/home/user1/.local/share/flatpak/repo/config'
+removed directory '/home/user1/.local/share/flatpak/repo/tmp/cache'
+removed directory '/home/user1/.local/share/flatpak/repo/tmp'
+removed directory '/home/user1/.local/share/flatpak/repo/extensions'
+removed directory '/home/user1/.local/share/flatpak/repo/state'
+removed directory '/home/user1/.local/share/flatpak/repo/refs/heads'
+removed directory '/home/user1/.local/share/flatpak/repo/refs/mirrors'
+removed directory '/home/user1/.local/share/flatpak/repo/refs/remotes'
+removed directory '/home/user1/.local/share/flatpak/repo/refs'
+removed directory '/home/user1/.local/share/flatpak/repo/objects'
+removed directory '/home/user1/.local/share/flatpak/repo'
+removed '/home/user1/.local/share/flatpak/.changed'
+removed directory '/home/user1/.local/share/flatpak'
+removed directory '/home/user1/.local/share/pki/nssdb'
+removed directory '/home/user1/.local/share/pki'
+removed directory '/home/user1/.local/share/icc'
+removed '/home/user1/.local/share/gnome-settings-daemon/input-sources-converted'
+removed directory '/home/user1/.local/share/gnome-settings-daemon'
+removed '/home/user1/.local/share/gvfs-metadata/home'
+removed '/home/user1/.local/share/gvfs-metadata/root'
+removed '/home/user1/.local/share/gvfs-metadata/home-91ca8a0e.log'
+removed '/home/user1/.local/share/gvfs-metadata/root-c65b0401.log'
+removed directory '/home/user1/.local/share/gvfs-metadata'
+removed directory '/home/user1/.local/share'
+removed '/home/user1/.local/state/wireplumber/restore-stream'
+removed directory '/home/user1/.local/state/wireplumber'
+removed directory '/home/user1/.local/state'
+removed directory '/home/user1/.local'
+removed directory '/home/user1/바탕화면'
+removed directory '/home/user1/다운로드'
+removed directory '/home/user1/서식'
+removed directory '/home/user1/공개'
+removed directory '/home/user1/문서'
+removed directory '/home/user1/음악'
+removed directory '/home/user1/사진'
+removed directory '/home/user1/비디오'
+removed '/home/user1/.config/user-dirs.dirs'
+removed '/home/user1/.config/user-dirs.locale'
+removed '/home/user1/.config/ibus/bus/17bacd6518e44a93a8bec09b6aff37fe-unix-wayland-0'
+removed directory '/home/user1/.config/ibus/bus'
+removed directory '/home/user1/.config/ibus'
+removed '/home/user1/.config/dconf/user'
+removed directory '/home/user1/.config/dconf'
+removed '/home/user1/.config/evolution/sources/system-proxy.source'
+removed directory '/home/user1/.config/evolution/sources'
+removed directory '/home/user1/.config/evolution'
+removed directory '/home/user1/.config/goa-1.0'
+removed '/home/user1/.config/pulse/cookie'
+removed directory '/home/user1/.config/pulse'
+removed '/home/user1/.config/gtk-3.0/bookmarks'
+removed directory '/home/user1/.config/gtk-3.0'
+removed '/home/user1/.config/.gsd-keyboard.settings-ported'
+removed '/home/user1/.config/gnome-initial-setup-done'
+removed directory '/home/user1/.config'
+removed '/home/user1/.cache/mesa_shader_cache/index'
+removed '/home/user1/.cache/mesa_shader_cache/35/0e8b350be8353fc97fc1a6ea3a00d639710f0b'
+removed directory '/home/user1/.cache/mesa_shader_cache/35'
+removed '/home/user1/.cache/mesa_shader_cache/ad/80e0bd105c40315d85a6406c6f0a879b4f5979'
+removed directory '/home/user1/.cache/mesa_shader_cache/ad'
+removed '/home/user1/.cache/mesa_shader_cache/24/85b3900584184b00d62b198fbcd32a1b838961'
+removed directory '/home/user1/.cache/mesa_shader_cache/24'
+removed '/home/user1/.cache/mesa_shader_cache/93/4712dad3a80e5be62ec88b07bf9daeea94fd08'
+removed directory '/home/user1/.cache/mesa_shader_cache/93'
+removed '/home/user1/.cache/mesa_shader_cache/4c/b3bf51a9b99abf217461fee42542f4bc52a067'
+removed directory '/home/user1/.cache/mesa_shader_cache/4c'
+removed '/home/user1/.cache/mesa_shader_cache/3d/008d27203606ab443ec7ba46c2c17f19b075ae'
+removed '/home/user1/.cache/mesa_shader_cache/3d/da29bf83d4fd119d8409fb4dc7a281f85628e7'
+removed '/home/user1/.cache/mesa_shader_cache/3d/00fc1d5c43d7eb3d679514de703ff896380e8e'
+removed directory '/home/user1/.cache/mesa_shader_cache/3d'
+removed '/home/user1/.cache/mesa_shader_cache/57/7b71e95bc7299ab83f4f51c91ced5198191dd2'
+removed directory '/home/user1/.cache/mesa_shader_cache/57'
+removed '/home/user1/.cache/mesa_shader_cache/f9/cbd9ee020772afbd952e833eda40e16059ec62'
+removed directory '/home/user1/.cache/mesa_shader_cache/f9'
+removed '/home/user1/.cache/mesa_shader_cache/3b/5d8388a5c0b7387be6babddebc7cd99224e82b'
+removed directory '/home/user1/.cache/mesa_shader_cache/3b'
+removed '/home/user1/.cache/mesa_shader_cache/09/615b4ee8e029fcb33cd50de6987508c3e067cc'
+removed directory '/home/user1/.cache/mesa_shader_cache/09'
+removed '/home/user1/.cache/mesa_shader_cache/d1/903a1e9f04c22ae746f67b6e0ad1cb40df16a2'
+removed directory '/home/user1/.cache/mesa_shader_cache/d1'
+removed '/home/user1/.cache/mesa_shader_cache/81/8b2ab8d75477495780417d3dc75395c65b2e3f'
+removed directory '/home/user1/.cache/mesa_shader_cache/81'
+removed '/home/user1/.cache/mesa_shader_cache/00/dc8b4d403100b51e6c0564e96d4b1fd713edb8'
+removed directory '/home/user1/.cache/mesa_shader_cache/00'
+removed '/home/user1/.cache/mesa_shader_cache/ef/1388ded48d63df5f90feced9e8922a515c54cc'
+removed directory '/home/user1/.cache/mesa_shader_cache/ef'
+removed '/home/user1/.cache/mesa_shader_cache/89/856a623006a016b6c1d1fad0498dc1abbcd987'
+removed directory '/home/user1/.cache/mesa_shader_cache/89'
+removed '/home/user1/.cache/mesa_shader_cache/b2/092fafaca43821ed5996a97579f40e5779853d'
+removed '/home/user1/.cache/mesa_shader_cache/b2/554bed28fb3bd4d22cc1317a97298c50bcc854'
+removed directory '/home/user1/.cache/mesa_shader_cache/b2'
+removed '/home/user1/.cache/mesa_shader_cache/cd/ed0d50fa94801b9a6a55ba8376050f0a0a7d13'
+removed directory '/home/user1/.cache/mesa_shader_cache/cd'
+removed '/home/user1/.cache/mesa_shader_cache/7d/eba424e3dff74440b678374a5a7261e974815b'
+removed directory '/home/user1/.cache/mesa_shader_cache/7d'
+removed '/home/user1/.cache/mesa_shader_cache/50/a43a68b77a43a8d90bb2cccf1f75794324bda2'
+removed '/home/user1/.cache/mesa_shader_cache/50/75da3167540a75072a79016b1dd7a017c06436'
+removed directory '/home/user1/.cache/mesa_shader_cache/50'
+removed '/home/user1/.cache/mesa_shader_cache/f3/4d9ba696f4cfc27268942e92ad1f7a173bccd7'
+removed directory '/home/user1/.cache/mesa_shader_cache/f3'
+removed '/home/user1/.cache/mesa_shader_cache/1e/aadd55b58564ba63ba13ac017502840a7bfe27'
+removed directory '/home/user1/.cache/mesa_shader_cache/1e'
+removed '/home/user1/.cache/mesa_shader_cache/2f/e56a28e50f1b64afcc1bfb28978f5f25d2f8a9'
+removed directory '/home/user1/.cache/mesa_shader_cache/2f'
+removed '/home/user1/.cache/mesa_shader_cache/c4/46413168c6603d4fb533bf08af6c3cbc0e6ad7'
+removed directory '/home/user1/.cache/mesa_shader_cache/c4'
+removed '/home/user1/.cache/mesa_shader_cache/0d/9b5c70afcc51715620118ba1d1e3f30bf1ff62'
+removed directory '/home/user1/.cache/mesa_shader_cache/0d'
+removed '/home/user1/.cache/mesa_shader_cache/47/fcfae2a668872c91565ab1c3cd951968b52bfc'
+removed '/home/user1/.cache/mesa_shader_cache/47/c63b3bfa1dc97b1c60fb7317fb4e9e6a31c5c1'
+removed directory '/home/user1/.cache/mesa_shader_cache/47'
+removed '/home/user1/.cache/mesa_shader_cache/05/35cb74db74fd7ec789a7588ecabd87674f80d7'
+removed directory '/home/user1/.cache/mesa_shader_cache/05'
+removed '/home/user1/.cache/mesa_shader_cache/ba/0d84bae50f1c081ce15288e00bb763293810ae'
+removed directory '/home/user1/.cache/mesa_shader_cache/ba'
+removed '/home/user1/.cache/mesa_shader_cache/76/d2351017443883b2dce34b5e82b52f95504d17'
+removed directory '/home/user1/.cache/mesa_shader_cache/76'
+removed '/home/user1/.cache/mesa_shader_cache/7a/6f831114fe4ed359515cfdededf93c74e31f1b'
+removed directory '/home/user1/.cache/mesa_shader_cache/7a'
+removed '/home/user1/.cache/mesa_shader_cache/64/0b87b6827e21644a4d94e743c232a6d166209a'
+removed directory '/home/user1/.cache/mesa_shader_cache/64'
+removed '/home/user1/.cache/mesa_shader_cache/97/439cdf1b239104a99f5c3664b633492bac5e40'
+removed directory '/home/user1/.cache/mesa_shader_cache/97'
+removed '/home/user1/.cache/mesa_shader_cache/37/ba6efbb536d760f8380ce13bf13209e3d0dcb4'
+removed directory '/home/user1/.cache/mesa_shader_cache/37'
+removed '/home/user1/.cache/mesa_shader_cache/10/00b99be7c4906f3e29f99c2d96a73f87494987'
+removed directory '/home/user1/.cache/mesa_shader_cache/10'
+removed '/home/user1/.cache/mesa_shader_cache/b7/2cf74cbbe744591b8d45bdf5a28662ae85c9a0'
+removed directory '/home/user1/.cache/mesa_shader_cache/b7'
+removed '/home/user1/.cache/mesa_shader_cache/ff/9428bfde59a46693bf3e4319e1654bb1794e64'
+removed directory '/home/user1/.cache/mesa_shader_cache/ff'
+removed '/home/user1/.cache/mesa_shader_cache/92/efa90d90fc00b6daaa2427aa28016b403de639'
+removed directory '/home/user1/.cache/mesa_shader_cache/92'
+removed '/home/user1/.cache/mesa_shader_cache/fe/ec53ffe3b56d9c6d9de215b25bb235e1c71186'
+removed directory '/home/user1/.cache/mesa_shader_cache/fe'
+removed '/home/user1/.cache/mesa_shader_cache/e4/8edbfa004f2fc7b642cbbf58718483cf294af8'
+removed directory '/home/user1/.cache/mesa_shader_cache/e4'
+removed '/home/user1/.cache/mesa_shader_cache/cf/ca3055678fcae80f25e3e502efef8e6c28c46e'
+removed directory '/home/user1/.cache/mesa_shader_cache/cf'
+removed '/home/user1/.cache/mesa_shader_cache/6c/5819048c0f9984d5f9da1fa67b45880ef40c04'
+removed directory '/home/user1/.cache/mesa_shader_cache/6c'
+removed '/home/user1/.cache/mesa_shader_cache/98/2dfb403bbe7c9cb166ddbdbb93bcbd90dceeb4'
+removed directory '/home/user1/.cache/mesa_shader_cache/98'
+removed '/home/user1/.cache/mesa_shader_cache/9e/c217caf8dec85254183fecd68486895fd01bd2'
+removed directory '/home/user1/.cache/mesa_shader_cache/9e'
+removed '/home/user1/.cache/mesa_shader_cache/59/1a25dcb815070647eb3d1bd0fdffbaa24e3745'
+removed directory '/home/user1/.cache/mesa_shader_cache/59'
+removed '/home/user1/.cache/mesa_shader_cache/13/0c5a1d4cb93e262f1ea77c80ac074282f8d271'
+removed directory '/home/user1/.cache/mesa_shader_cache/13'
+removed '/home/user1/.cache/mesa_shader_cache/1f/bd8e3b5bd7a5970c4f4f4d98a696500b1c3729'
+removed directory '/home/user1/.cache/mesa_shader_cache/1f'
+removed '/home/user1/.cache/mesa_shader_cache/c9/acad6d81db4b4588adebd13f868edc827c5c32'
+removed directory '/home/user1/.cache/mesa_shader_cache/c9'
+removed '/home/user1/.cache/mesa_shader_cache/c0/bd9ec6954a334f0bbef9981aa7c35a16f201cb'
+removed directory '/home/user1/.cache/mesa_shader_cache/c0'
+removed '/home/user1/.cache/mesa_shader_cache/e6/0bc929685166d983c8f1663c212c19412c32e4'
+removed directory '/home/user1/.cache/mesa_shader_cache/e6'
+removed '/home/user1/.cache/mesa_shader_cache/07/7f98fd86a6b7780a53e4ab8987d41ae2eec105'
+removed directory '/home/user1/.cache/mesa_shader_cache/07'
+removed '/home/user1/.cache/mesa_shader_cache/1b/2d04d279d3a18ed090b94f6ab551f6ff390cca'
+removed directory '/home/user1/.cache/mesa_shader_cache/1b'
+removed '/home/user1/.cache/mesa_shader_cache/9a/26f5cd5e7cf1bf1fe438c8430a6baa64182bc7'
+removed directory '/home/user1/.cache/mesa_shader_cache/9a'
+removed '/home/user1/.cache/mesa_shader_cache/91/cf5a5bfc43651a6ccaac4571fc343156d8f789'
+removed directory '/home/user1/.cache/mesa_shader_cache/91'
+removed '/home/user1/.cache/mesa_shader_cache/41/d03ebd38890e16b96202b4e5c7cb71ae6f0a29'
+removed directory '/home/user1/.cache/mesa_shader_cache/41'
+removed '/home/user1/.cache/mesa_shader_cache/03/d026accdc6c37f87417c358476cc448b664b5e'
+removed directory '/home/user1/.cache/mesa_shader_cache/03'
+removed directory '/home/user1/.cache/mesa_shader_cache'
+removed directory '/home/user1/.cache/ibus'
+removed directory '/home/user1/.cache/evolution/addressbook/trash'
+removed directory '/home/user1/.cache/evolution/addressbook'
+removed directory '/home/user1/.cache/evolution/calendar/trash'
+removed directory '/home/user1/.cache/evolution/calendar'
+removed directory '/home/user1/.cache/evolution/mail/trash'
+removed directory '/home/user1/.cache/evolution/mail'
+removed directory '/home/user1/.cache/evolution/memos/trash'
+removed directory '/home/user1/.cache/evolution/memos'
+removed directory '/home/user1/.cache/evolution/sources/trash'
+removed directory '/home/user1/.cache/evolution/sources'
+removed directory '/home/user1/.cache/evolution/tasks/trash'
+removed directory '/home/user1/.cache/evolution/tasks'
+removed directory '/home/user1/.cache/evolution'
+removed '/home/user1/.cache/event-sound-cache.tdb.17bacd6518e44a93a8bec09b6aff37fe.x86_64-redhat-linux-gnu'
+removed '/home/user1/.cache/gstreamer-1.0/registry.x86_64.bin'
+removed directory '/home/user1/.cache/gstreamer-1.0'
+removed '/home/user1/.cache/gnome-software/appstream/components.xmlb'
+removed directory '/home/user1/.cache/gnome-software/appstream'
+removed '/home/user1/.cache/gnome-software/flatpak-system-default/components.xmlb'
+removed directory '/home/user1/.cache/gnome-software/flatpak-system-default'
+removed '/home/user1/.cache/gnome-software/flatpak-user-user/components.xmlb'
+removed directory '/home/user1/.cache/gnome-software/flatpak-user-user'
+removed '/home/user1/.cache/gnome-software/odrs/ratings.json'
+removed directory '/home/user1/.cache/gnome-software/odrs'
+removed directory '/home/user1/.cache/gnome-software'
+removed directory '/home/user1/.cache/flatpak/system-cache'
+removed directory '/home/user1/.cache/flatpak'
+removed directory '/home/user1/.cache/appstream'
+removed directory '/home/user1/.cache'
+removed '/home/user1/.bash_history'
+removed '/home/user1/.viminfo'
+removed directory '/home/user1'
+[root@linux-1 ~]# c
+[root@linux-1 ~]# ls -s /home
+합계 4
+4 student
+[root@linux-1 ~]# ls -l /home
+합계 4
+drwx------. 14 student student 4096 12월 28 13:08 student
+[root@linux-1 ~]# ll
+합계 84
+-rw-------. 1 root root  1008 12월 27 17:52 anaconda-ks.cfg
+-rw-r--r--. 1 root root 81569 12월 29 17:24 help.txt
+drwxr-xr-x. 2 root root     6 12월 29 13:11 test2023
+drwxr-xr-x. 2 root root     6 12월 27 17:57 공개
+drwxr-xr-x. 2 root root     6 12월 27 17:57 다운로드
+drwxr-xr-x. 2 root root     6 12월 27 17:57 문서
+drwxr-xr-x. 2 root root     6 12월 27 17:57 바탕화면
+drwxr-xr-x. 2 root root     6 12월 27 17:57 비디오
+drwxr-xr-x. 2 root root     6 12월 27 17:57 사진
+drwxr-xr-x. 2 root root     6 12월 27 17:57 서식
+drwxr-xr-x. 2 root root     6 12월 27 17:57 음악
+[root@linux-1 ~]# alias | grep ll
+alias ll='ls -l --color=auto'
+[root@linux-1 ~]# alias grep
+alias grep='grep --color=auto'
+[root@linux-1 ~]# ls -l /bighome
+합계 0
+drwx------. 3 user3 user3 78  1월  2 11:20 user3
+[root@linux-1 ~]# userdel -r /bighome/user3
+userdel: '/bighome/user3' 사용자가 없습니다
+[root@linux-1 ~]# ll /bighome/
+합계 0
+drwx------. 3 user3 user3 78  1월  2 11:20 user3
+[root@linux-1 ~]# userdel -r /bighome/user3 user3
+Usage: userdel [options] LOGIN
+
+Options:
+  -f, --force                   force some actions that would fail otherwise
+                                e.g. removal of user still logged in
+                                or files, even if not owned by the user
+  -h, --help                    display this help message and exit
+  -r, --remove                  remove home directory and mail spool
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -Z, --selinux-user            remove any SELinux user mapping for the user
+
+[root@linux-1 ~]# userdel -r /bighome  user3
+Usage: userdel [options] LOGIN
+
+Options:
+  -f, --force                   force some actions that would fail otherwise
+                                e.g. removal of user still logged in
+                                or files, even if not owned by the user
+  -h, --help                    display this help message and exit
+  -r, --remove                  remove home directory and mail spool
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -Z, --selinux-user            remove any SELinux user mapping for the user
+
+[root@linux-1 ~]# userdel -r user3
+[root@linux-1 ~]# ll /bighome/
+합계 0
+[root@linux-1 ~]# ls -l /bighome
+합계 0
+[root@linux-1 ~]# rn -rvf /bighome
+bash: rn: command not found...
+[root@linux-1 ~]# rm -rvf /bighome
+removed directory '/bighome'
+[root@linux-1 ~]# ls
+anaconda-ks.cfg  help.txt  test2023  공개  다운로드  문서  바탕화면  비디오  사진  서식  음악
+[root@linux-1 ~]# c
+[root@linux-1 ~]# groupadd --help | head -5
+Usage: groupadd [options] GROUP
+
+Options:
+  -f, --force                   exit successfully if the group already exists,
+                                and cancel -g if the GID is already used
+[root@linux-1 ~]# groupadd --help | head -5 | cat -n
+     1	Usage: groupadd [options] GROUP
+     2	
+     3	Options:
+     4	  -f, --force                   exit successfully if the group already exists,
+     5	                                and cancel -g if the GID is already used
+[root@linux-1 ~]# c
+[root@linux-1 ~]# groupadd sales
+[root@linux-1 ~]# ls -l
+합계 84
+-rw-------. 1 root root  1008 12월 27 17:52 anaconda-ks.cfg
+-rw-r--r--. 1 root root 81569 12월 29 17:24 help.txt
+drwxr-xr-x. 2 root root     6 12월 29 13:11 test2023
+drwxr-xr-x. 2 root root     6 12월 27 17:57 공개
+drwxr-xr-x. 2 root root     6 12월 27 17:57 다운로드
+drwxr-xr-x. 2 root root     6 12월 27 17:57 문서
+drwxr-xr-x. 2 root root     6 12월 27 17:57 바탕화면
+drwxr-xr-x. 2 root root     6 12월 27 17:57 비디오
+drwxr-xr-x. 2 root root     6 12월 27 17:57 사진
+drwxr-xr-x. 2 root root     6 12월 27 17:57 서식
+drwxr-xr-x. 2 root root     6 12월 27 17:57 음악
+[root@linux-1 ~]# ls group
+ls: cannot access 'group': 그런 파일이나 디렉터리가 없습니다
+[root@linux-1 ~]# c
+[root@linux-1 ~]# groupadd admins
+[root@linux-1 ~]# ll
+합계 84
+-rw-------. 1 root root  1008 12월 27 17:52 anaconda-ks.cfg
+-rw-r--r--. 1 root root 81569 12월 29 17:24 help.txt
+drwxr-xr-x. 2 root root     6 12월 29 13:11 test2023
+drwxr-xr-x. 2 root root     6 12월 27 17:57 공개
+drwxr-xr-x. 2 root root     6 12월 27 17:57 다운로드
+drwxr-xr-x. 2 root root     6 12월 27 17:57 문서
+drwxr-xr-x. 2 root root     6 12월 27 17:57 바탕화면
+drwxr-xr-x. 2 root root     6 12월 27 17:57 비디오
+drwxr-xr-x. 2 root root     6 12월 27 17:57 사진
+drwxr-xr-x. 2 root root     6 12월 27 17:57 서식
+drwxr-xr-x. 2 root root     6 12월 27 17:57 음악
+[root@linux-1 ~]# c
+[root@linux-1 ~]# tail -2 /etc/group
+sales:x:1002:
+admins:x:1003:
+[root@linux-1 ~]# tail -5 /etc/group
+tcpdump:x:72:
+student:x:1000:
+user1:x:1001:
+sales:x:1002:
+admins:x:1003:
+[root@linux-1 ~]# rm -rvf user1
+[root@linux-1 ~]# tail -5 /etc/group
+tcpdump:x:72:
+student:x:1000:
+user1:x:1001:
+sales:x:1002:
+admins:x:1003:
+[root@linux-1 ~]# userdel -r user1
+userdel: user user1 is currently used by process 4180
+[root@linux-1 ~]# c
+[root@linux-1 ~]# useradd -G sales  s1
+[root@linux-1 ~]# tail -2 group
+tail: cannot open 'group' for reading: 그런 파일이나 디렉터리가 없습니다
+[root@linux-1 ~]# tail -2 /etc/group
+admins:x:1003:
+s1:x:1004:
+[root@linux-1 ~]# tail -5  /etc/group
+student:x:1000:
+user1:x:1001:
+sales:x:1002:s1
+admins:x:1003:
+s1:x:1004:
+[root@linux-1 ~]# group -i -w "sales" /etc/gorup
+bash: group: command not found...
+[root@linux-1 ~]# grep -i -w "sales" /etc/gorup
+grep: /etc/gorup: 그런 파일이나 디렉터리가 없습니다
+[root@linux-1 ~]# grep -i -w "sales" /etc/group
+sales:x:1002:s1
+[root@linux-1 ~]# useradd -G sales s2
+[root@linux-1 ~]# useradd -G sales s3
+[root@linux-1 ~]# tail -5  /etc/group
+sales:x:1002:s1,s2,s3
+admins:x:1003:
+s1:x:1004:
+s2:x:1005:
+s3:x:1006:
+[root@linux-1 ~]# grep -i -w "sales" /etc/group
+sales:x:1002:s1,s2,s3
+[root@linux-1 ~]# grep -i -w "admins" /etc/group
+admins:x:1003:
+[root@linux-1 ~]# useradd -G admins a1
+[root@linux-1 ~]# useradd -G admins a2
+[root@linux-1 ~]# useradd -G admins a3
+[root@linux-1 ~]# userdel -G admins a3
+userdel: 부적절한 옵션 -- 'G'
+Usage: userdel [options] LOGIN
+
+Options:
+  -f, --force                   force some actions that would fail otherwise
+                                e.g. removal of user still logged in
+                                or files, even if not owned by the user
+  -h, --help                    display this help message and exit
+  -r, --remove                  remove home directory and mail spool
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -Z, --selinux-user            remove any SELinux user mapping for the user
+
+[root@linux-1 ~]# userdel -r admins a3
+Usage: userdel [options] LOGIN
+
+Options:
+  -f, --force                   force some actions that would fail otherwise
+                                e.g. removal of user still logged in
+                                or files, even if not owned by the user
+  -h, --help                    display this help message and exit
+  -r, --remove                  remove home directory and mail spool
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -Z, --selinux-user            remove any SELinux user mapping for the user
+
+[root@linux-1 ~]# userdel -r /etc/group/admins a3
+Usage: userdel [options] LOGIN
+
+Options:
+  -f, --force                   force some actions that would fail otherwise
+                                e.g. removal of user still logged in
+                                or files, even if not owned by the user
+  -h, --help                    display this help message and exit
+  -r, --remove                  remove home directory and mail spool
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -Z, --selinux-user            remove any SELinux user mapping for the user
+
+[root@linux-1 ~]# c
+[root@linux-1 ~]# grep -i -w "admins" /etc/group
+admins:x:1003:a1,a2,a3
+[root@linux-1 ~]# useradd a4
+[root@linux-1 ~]# useradd -G admins a4
+useradd: 'a4' 사용자가 이미 있습니다
+[root@linux-1 ~]# usermod -G admins a4
+[root@linux-1 ~]# grep -i -w "admins" /etc/group
+admins:x:1003:a1,a2,a3,a4
+[root@linux-1 ~]# adduser a5
+[root@linux-1 ~]# grep -i -w "admins" /etc/group
+admins:x:1003:a1,a2,a3,a4
+[root@linux-1 ~]# usermod -aG admins a5
+[root@linux-1 ~]# grep -i -w "admins" /etc/group
+admins:x:1003:a1,a2,a3,a4,a5
+[root@linux-1 ~]# grep admins /etc/group
+admins:x:1003:a1,a2,a3,a4,a5
+[root@linux-1 ~]# grep sales  /etc/group
+sales:x:1002:s1,s2,s3
+[root@linux-1 ~]# usermod --help
+Usage: usermod [options] LOGIN
+
+Options:
+  -b, --badname                 allow bad names
+  -c, --comment COMMENT         new value of the GECOS field
+  -d, --home HOME_DIR           new home directory for the user account
+  -e, --expiredate EXPIRE_DATE  set account expiration date to EXPIRE_DATE
+  -f, --inactive INACTIVE       set password inactive after expiration
+                                to INACTIVE
+  -g, --gid GROUP               force use GROUP as new primary group
+  -G, --groups GROUPS           new list of supplementary GROUPS
+  -a, --append                  append the user to the supplemental GROUPS
+                                mentioned by the -G option without removing
+                                the user from other groups
+  -h, --help                    display this help message and exit
+  -l, --login NEW_LOGIN         new value of the login name
+  -L, --lock                    lock the user account
+  -m, --move-home               move contents of the home directory to the
+                                new location (use only with -d)
+  -o, --non-unique              allow using duplicate (non-unique) UID
+  -p, --password PASSWORD       use encrypted password for the new password
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -s, --shell SHELL             new login shell for the user account
+  -u, --uid UID                 new UID for the user account
+  -U, --unlock                  unlock the user account
+  -v, --add-subuids FIRST-LAST  add range of subordinate uids
+  -V, --del-subuids FIRST-LAST  remove range of subordinate uids
+  -w, --add-subgids FIRST-LAST  add range of subordinate gids
+  -W, --del-subgids FIRST-LAST  remove range of subordinate gids
+  -Z, --selinux-user SEUSER     new SELinux user mapping for the user account
+
+[root@linux-1 ~]# c
+[root@linux-1 ~]# gpasswd --help
+Usage: gpasswd [option] GROUP
+
+Options:
+  -a, --add USER                add USER to GROUP
+  -d, --delete USER             remove USER from GROUP
+  -h, --help                    display this help message and exit
+  -Q, --root CHROOT_DIR         directory to chroot into
+  -r, --delete-password         remove the GROUP's password
+  -R, --restrict                restrict access to GROUP to its members
+  -M, --members USER,...        set the list of members of GROUP
+  -A, --administrators ADMIN,...
+                                set the list of administrators for GROUP
+Except for the -A and -M options, the options cannot be combined.
+[root@linux-1 ~]# c
+[root@linux-1 ~]# grep sales /etc/group
+sales:x:1002:s1,s2,s3
+[root@linux-1 ~]# grep admins  /etc/group
+admins:x:1003:a1,a2,a3,a4,a5
+[root@linux-1 ~]# gpasswd -d admins /etc/group a5
+Usage: gpasswd [option] GROUP
+
+Options:
+  -a, --add USER                add USER to GROUP
+  -d, --delete USER             remove USER from GROUP
+  -h, --help                    display this help message and exit
+  -Q, --root CHROOT_DIR         directory to chroot into
+  -r, --delete-password         remove the GROUP's password
+  -R, --restrict                restrict access to GROUP to its members
+  -M, --members USER,...        set the list of members of GROUP
+  -A, --administrators ADMIN,...
+                                set the list of administrators for GROUP
+Except for the -A and -M options, the options cannot be combined.
+[root@linux-1 ~]# gpasswd -d "a5" /etc/group
+gpasswd: '/etc/group' 그룹이 /etc/group에 없습니다
+[root@linux-1 ~]# gpasswd -d "a5"
+Usage: gpasswd [option] GROUP
+
+Options:
+  -a, --add USER                add USER to GROUP
+  -d, --delete USER             remove USER from GROUP
+  -h, --help                    display this help message and exit
+  -Q, --root CHROOT_DIR         directory to chroot into
+  -r, --delete-password         remove the GROUP's password
+  -R, --restrict                restrict access to GROUP to its members
+  -M, --members USER,...        set the list of members of GROUP
+  -A, --administrators ADMIN,...
+                                set the list of administrators for GROUP
+Except for the -A and -M options, the options cannot be combined.
+[root@linux-1 ~]# gpasswd -d "a5" /etc/group/
+gpasswd: '/etc/group/' 그룹이 /etc/group에 없습니다
+[root@linux-1 ~]# c
+[root@linux-1 ~]# gpasswd -d a5 aminds
+gpasswd: 'aminds' 그룹이 /etc/group에 없습니다
+[root@linux-1 ~]# gpasswd -d a5 admins
+사용자 a5을(를) 그룹 admins에서 제거하는 중
+[root@linux-1 ~]# gpasswd -d a4 admins
+사용자 a4을(를) 그룹 admins에서 제거하는 중
+[root@linux-1 ~]# gpasswd -d a3 admins
+사용자 a3을(를) 그룹 admins에서 제거하는 중
+[root@linux-1 ~]# gpasswd -d s1 sales
+사용자 s1을(를) 그룹 sales에서 제거하는 중
+[root@linux-1 ~]# gpasswd -d s2 sales
+사용자 s2을(를) 그룹 sales에서 제거하는 중
+[root@linux-1 ~]# gpasswd -d s3 sales
+사용자 s3을(를) 그룹 sales에서 제거하는 중
+[root@linux-1 ~]# grep sales /etc/group
+sales:x:1002:
+[root@linux-1 ~]# gpasswd -d a4 admins
+사용자 a4을(를) 그룹 admins에서 제거하는 중
+gpasswd: `a4' 사용자는 'admins'의 멤버가 아닙니다
+[root@linux-1 ~]# grep admins /etc/group
+admins:x:1003:a1,a2
+[root@linux-1 ~]# gpasswd -d a1 admins
+사용자 a1을(를) 그룹 admins에서 제거하는 중
+[root@linux-1 ~]# gpasswd -d a2 admins
+사용자 a2을(를) 그룹 admins에서 제거하는 중
+[root@linux-1 ~]# grep admins /etc/group
+admins:x:1003:
+[root@linux-1 ~]# gpasswd -a a1 admins
+사용자 a1을(를) admins 그룹에 등록 중
+[root@linux-1 ~]# usermod -aG admins a2
+[root@linux-1 ~]# grep admins /etc/group
+admins:x:1003:a1,a2
+[root@linux-1 ~]# c
+[root@linux-1 ~]# grep wheel /etc/group
+wheel:x:10:student
+[root@linux-1 ~]# groupadd wheel
+groupadd: 'wheel' 그룹이 이미 있습니다
+[root@linux-1 ~]# useradd -aG wheel admin1
+useradd: 부적절한 옵션 -- 'a'
+Usage: useradd [options] LOGIN
+       useradd -D
+       useradd -D [options]
+
+Options:
+      --badname                 do not check for bad names
+  -b, --base-dir BASE_DIR       base directory for the home directory of the
+                                new account
+      --btrfs-subvolume-home    use BTRFS subvolume for home directory
+  -c, --comment COMMENT         GECOS field of the new account
+  -d, --home-dir HOME_DIR       home directory of the new account
+  -D, --defaults                print or change default useradd configuration
+  -e, --expiredate EXPIRE_DATE  expiration date of the new account
+  -f, --inactive INACTIVE       password inactivity period of the new account
+  -g, --gid GROUP               name or ID of the primary group of the new
+                                account
+  -G, --groups GROUPS           list of supplementary groups of the new
+                                account
+  -h, --help                    display this help message and exit
+  -k, --skel SKEL_DIR           use this alternative skeleton directory
+  -K, --key KEY=VALUE           override /etc/login.defs defaults
+  -l, --no-log-init             do not add the user to the lastlog and
+                                faillog databases
+  -m, --create-home             create the user's home directory
+  -M, --no-create-home          do not create the user's home directory
+  -N, --no-user-group           do not create a group with the same name as
+                                the user
+  -o, --non-unique              allow to create users with duplicate
+                                (non-unique) UID
+  -p, --password PASSWORD       encrypted password of the new account
+  -r, --system                  create a system account
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -s, --shell SHELL             login shell of the new account
+  -u, --uid UID                 user ID of the new account
+  -U, --user-group              create a group with the same name as the user
+  -Z, --selinux-user SEUSER     use a specific SEUSER for the SELinux user mapping
+
+[root@linux-1 ~]# useradd -G wheel admin1
+[root@linux-1 ~]# c
+[root@linux-1 ~]# passwd admin1
+admin1 사용자의 비밀 번호 변경 중
+새 암호:
+잘못된 암호: 암호가 앞뒤 어느쪽에서 읽어도 같은 문맥임
+새 암호 재입력:
+passwd: 모든 인증 토큰이 성공적으로 업데이트 되었습니다.
+[root@linux-1 ~]# grep wheel
+^C
+[root@linux-1 ~]# grep wheel /etc/group
+wheel:x:10:student,admin1
+[root@linux-1 ~]# pwd
+/root
+[root@linux-1 ~]# passwd admin2
+passwd: 알 수 없는 사용자 이름 'admin2'.
+[root@linux-1 ~]# grep wheel /etc/passwd
+[root@linux-1 ~]# su - admin1
+[admin1@linux-1 ~]$ pwd
+/home/admin1
+[admin1@linux-1 ~]$ exit
+로그아웃
+[root@linux-1 ~]# pwd
+/root
+[root@linux-1 ~]# c
+[root@linux-1 ~]# su - admin1
+[admin1@linux-1 ~]$ pwd
+/home/admin1
+[admin1@linux-1 ~]$ su - root
+암호:
+[root@linux-1 ~]# exit
+로그아웃
+[admin1@linux-1 ~]$ useradd test1
+useradd: Permission denied.
+useradd: /etc/passwd을(를) 잠글 수 없습니다. 나중에 다시 시도하십시오.
+[admin1@linux-1 ~]$ c
+bash: c: command not found...
+[admin1@linux-1 ~]$ c
+bash: c: command not found...
+[admin1@linux-1 ~]$ clear
+[admin1@linux-1 ~]$ sudo useradd test1
+
+로컬 시스템 관리자에게 일반적인 지침을 받았으리라 믿습니다.
+보통 세가지로 요약합니다:
+
+    #1) 타인의 사생활을 존중하십시오.
+    #2) 입력하기 전에 한 번 더 생각하십시오.
+    #3) 막강한 힘에는 상당한 책임이 뒤따릅니다.
+
+[sudo] admin1의 암호: 
+[admin1@linux-1 ~]$ tail -5 /etc/passwd
+a3:x:1007:1009::/home/a3:/bin/bash
+a4:x:1008:1010::/home/a4:/bin/bash
+a5:x:1009:1011::/home/a5:/bin/bash
+admin1:x:1010:1012::/home/admin1:/bin/bash
+test1:x:1011:1013::/home/test1:/bin/bash
+[admin1@linux-1 ~]$ sudo useradd test2
+[admin1@linux-1 ~]$ tail -5 /etc/passwd
+a4:x:1008:1010::/home/a4:/bin/bash
+a5:x:1009:1011::/home/a5:/bin/bash
+admin1:x:1010:1012::/home/admin1:/bin/bash
+test1:x:1011:1013::/home/test1:/bin/bash
+test2:x:1012:1014::/home/test2:/bin/bash
+[admin1@linux-1 ~]$ cat /etc/shadow
+cat: /etc/shadow: 허가 거부
+[admin1@linux-1 ~]$ sudo cat /etc/shadow
+root:$6$PCVhhWSC/RrnYFZS$5NYKtUnZXOIqhk5X5HaLrFujiYdXQmD3ZWA2R1XLMBtJIq61oW0XMvQ8jzTepa3GEKDBa0L8lI7NhUlh6PnOL.::0:99999:7:::
+bin:*:19469:0:99999:7:::
+daemon:*:19469:0:99999:7:::
+adm:*:19469:0:99999:7:::
+lp:*:19469:0:99999:7:::
+sync:*:19469:0:99999:7:::
+shutdown:*:19469:0:99999:7:::
+halt:*:19469:0:99999:7:::
+mail:*:19469:0:99999:7:::
+operator:*:19469:0:99999:7:::
+games:*:19469:0:99999:7:::
+ftp:*:19469:0:99999:7:::
+nobody:*:19469:0:99999:7:::
+systemd-coredump:!!:19718::::::
+dbus:!!:19718::::::
+polkitd:!!:19718::::::
+avahi:!!:19718::::::
+rtkit:!!:19718::::::
+pipewire:!!:19718::::::
+sssd:!!:19718::::::
+libstoragemgmt:!*:19718::::::
+systemd-oom:!*:19718::::::
+tss:!!:19718::::::
+geoclue:!!:19718::::::
+cockpit-ws:!!:19718::::::
+cockpit-wsinstance:!!:19718::::::
+flatpak:!!:19718::::::
+colord:!!:19718::::::
+clevis:!!:19718::::::
+setroubleshoot:!!:19718::::::
+gdm:!!:19718::::::
+gnome-initial-setup:!!:19718::::::
+sshd:!!:19718::::::
+chrony:!!:19718::::::
+dnsmasq:!!:19718::::::
+tcpdump:!!:19718::::::
+student:$6$Nl4guuE1uUiibjug$pa6mDAQJQzYxg6a61ZhoiET7LBpIOm9lW3nEAYDPL.oL9J/do9j7yme2cGamncwywJr5cjQtVD42HULXnidfa0::0:99999:7:::
+user1:$6$cQW0XkIpftOHgitG$tgg1QFIxzGEJNU9Wx9Dvy3aW4N2n2WvHlfhvorVdi4ARg9gVwOV.ihL08aaQVjvhQb79PXaEIjWj9raGGLT0e0:19724:0:99999:7:::
+s1:!!:19724:0:99999:7:::
+s2:!!:19724:0:99999:7:::
+s3:!!:19724:0:99999:7:::
+a1:!!:19724:0:99999:7:::
+a2:!!:19724:0:99999:7:::
+a3:!!:19724:0:99999:7:::
+a4:!!:19724:0:99999:7:::
+a5:!!:19724:0:99999:7:::
+admin1:$6$r1duP/sHruoR2yfp$eERBd6Icg.LTVsVuH/SHlm.wCMx8fd3hU0aL0GCI59rzw25eWy7HLgiVURYfDjY1g3C.WcfC3CaydMdfwvc7T/:19724:0:99999:7:::
+test1:!!:19724:0:99999:7:::
+test2:!!:19724:0:99999:7:::
+[admin1@linux-1 ~]$ exit
+로그아웃
+[root@linux-1 ~]# cat /etc/shadow
+root:$6$PCVhhWSC/RrnYFZS$5NYKtUnZXOIqhk5X5HaLrFujiYdXQmD3ZWA2R1XLMBtJIq61oW0XMvQ8jzTepa3GEKDBa0L8lI7NhUlh6PnOL.::0:99999:7:::
+bin:*:19469:0:99999:7:::
+daemon:*:19469:0:99999:7:::
+adm:*:19469:0:99999:7:::
+lp:*:19469:0:99999:7:::
+sync:*:19469:0:99999:7:::
+shutdown:*:19469:0:99999:7:::
+halt:*:19469:0:99999:7:::
+mail:*:19469:0:99999:7:::
+operator:*:19469:0:99999:7:::
+games:*:19469:0:99999:7:::
+ftp:*:19469:0:99999:7:::
+nobody:*:19469:0:99999:7:::
+systemd-coredump:!!:19718::::::
+dbus:!!:19718::::::
+polkitd:!!:19718::::::
+avahi:!!:19718::::::
+rtkit:!!:19718::::::
+pipewire:!!:19718::::::
+sssd:!!:19718::::::
+libstoragemgmt:!*:19718::::::
+systemd-oom:!*:19718::::::
+tss:!!:19718::::::
+geoclue:!!:19718::::::
+cockpit-ws:!!:19718::::::
+cockpit-wsinstance:!!:19718::::::
+flatpak:!!:19718::::::
+colord:!!:19718::::::
+clevis:!!:19718::::::
+setroubleshoot:!!:19718::::::
+gdm:!!:19718::::::
+gnome-initial-setup:!!:19718::::::
+sshd:!!:19718::::::
+chrony:!!:19718::::::
+dnsmasq:!!:19718::::::
+tcpdump:!!:19718::::::
+student:$6$Nl4guuE1uUiibjug$pa6mDAQJQzYxg6a61ZhoiET7LBpIOm9lW3nEAYDPL.oL9J/do9j7yme2cGamncwywJr5cjQtVD42HULXnidfa0::0:99999:7:::
+user1:$6$cQW0XkIpftOHgitG$tgg1QFIxzGEJNU9Wx9Dvy3aW4N2n2WvHlfhvorVdi4ARg9gVwOV.ihL08aaQVjvhQb79PXaEIjWj9raGGLT0e0:19724:0:99999:7:::
+s1:!!:19724:0:99999:7:::
+s2:!!:19724:0:99999:7:::
+s3:!!:19724:0:99999:7:::
+a1:!!:19724:0:99999:7:::
+a2:!!:19724:0:99999:7:::
+a3:!!:19724:0:99999:7:::
+a4:!!:19724:0:99999:7:::
+a5:!!:19724:0:99999:7:::
+admin1:$6$r1duP/sHruoR2yfp$eERBd6Icg.LTVsVuH/SHlm.wCMx8fd3hU0aL0GCI59rzw25eWy7HLgiVURYfDjY1g3C.WcfC3CaydMdfwvc7T/:19724:0:99999:7:::
+test1:!!:19724:0:99999:7:::
+test2:!!:19724:0:99999:7:::
+[root@linux-1 ~]# useradd admin2
+[root@linux-1 ~]# grep /etc/passwd
+^[^C
+[root@linux-1 ~]# passwd admin2
+admin2 사용자의 비밀 번호 변경 중
+새 암호:
+잘못된 암호: 암호가 앞뒤 어느쪽에서 읽어도 같은 문맥임
+새 암호 재입력:
+passwd: 모든 인증 토큰이 성공적으로 업데이트 되었습니다.
+[root@linux-1 ~]# grep wheel /etc/group
+wheel:x:10:student,admin1
+[root@linux-1 ~]# grep  /etc/group
+^[^C
+[root@linux-1 ~]# grep group /etc/group
+[root@linux-1 ~]# su - admin2
+[admin2@linux-1 ~]$ sudo useradd admin2
+
+로컬 시스템 관리자에게 일반적인 지침을 받았으리라 믿습니다.
+보통 세가지로 요약합니다:
+
+    #1) 타인의 사생활을 존중하십시오.
+    #2) 입력하기 전에 한 번 더 생각하십시오.
+    #3) 막강한 힘에는 상당한 책임이 뒤따릅니다.
+
+[sudo] admin2의 암호: 
+admin2은(는) sudoers 설정 파일에 없습니다.  이 시도를 보고합니다.
+[admin2@linux-1 ~]$ ls /etc
+DIR_COLORS               chromium         dnsmasq.conf   group-         libibverbs.d              multipath          profile                 shadow              tpm2-tss
+DIR_COLORS.lightbgcolor  chrony.conf      dnsmasq.d      grub.d         libnl                     nanorc             profile.d               shadow-             trusted-key.key
+GREP_COLORS              chrony.keys      dracut.conf    grub2.cfg      libpaper.d                netconfig          protocols               shells              tuned
+NetworkManager           cifs-utils       dracut.conf.d  gshadow        libreport                 networks           pulse                   skel                udev
+PackageKit               cni              egl            gshadow-       libssh                    nftables           qemu-ga                 smartmontools       udisks2
+UPower                   cockpit          enscript.cfg   gss            libuser.conf              nsswitch.conf      ras                     sos                 updatedb.conf
+X11                      containers       environment    host.conf      locale.conf               nsswitch.conf.bak  rc.d                    speech-dispatcher   usb_modeswitch.conf
+accountsservice          cron.d           ethertypes     hostname       localtime                 nvme               rc.local                ssh                 vconsole.conf
+adjtime                  cron.daily       exports        hosts          login.defs                openldap           redhat-release          ssl                 vimrc
+aliases                  cron.deny        favicon.png    hp             logrotate.conf            opt                resolv.conf             sssd                virc
+alsa                     cron.hourly      filesystems    inittab        logrotate.d               os-release         rocky-release           statetab.d          vmware-tools
+alternatives             cron.monthly     firefox        inputrc        lsm                       ostree             rocky-release-upstream  subgid              vulkan
+anacrontab               cron.weekly      firewalld      iproute2       lvm                       pam.d              rpc                     subgid-             wgetrc
+appstream.conf           crontab          flatpak        iscsi          machine-id                papersize          rpm                     subuid              wireplumber
+asound.conf              crypto-policies  fonts          issue          magic                     passwd             rsyncd.conf             subuid-             wpa_supplicant
+at.deny                  crypttab         foomatic       issue.d        mailcap                   passwd-            rsyslog.conf            sudo-ldap.conf      xattr.conf
+audit                    csh.cshrc        fprintd.conf   issue.net      makedumpfile.conf.sample  pbm2ppa.conf       rsyslog.d               sudo.conf           xdg
+authselect               csh.login        fstab          kdump          man_db.conf               pinforc            rwtab.d                 sudoers             xml
+avahi                    cups             fuse.conf      kdump.conf     mcelog                    pkcs11             samba                   sudoers.d           yum
+bash_completion.d        cupshelpers      fwupd          kernel         microcode_ctl             pkgconfig          sane.d                  sysconfig           yum.conf
+bashrc                   dbus-1           gcrypt         krb5.conf      mime.types                pki                sasl2                   sysctl.conf         yum.repos.d
+bindresvport.blacklist   dconf            gdm            krb5.conf.d    mke2fs.conf               plymouth           security                sysctl.d
+binfmt.d                 debuginfod       geoclue        ld.so.cache    modprobe.d                pm                 selinux                 system-release
+bluetooth                default          glvnd          ld.so.conf     modules-load.d            pnm2ppa.conf       services                system-release-cpe
+brlapi.key               depmod.d         gnupg          ld.so.conf.d   motd                      polkit-1           sestatus.conf           systemd
+brltty                   dhcp             groff          libaudit.conf  motd.d                    popt.d             setroubleshoot          terminfo
+brltty.conf              dnf              group          libblockdev    mtab                      printcap           sgml                    tmpfiles.d
+[admin2@linux-1 ~]$ ls /etc | grep "sudors"
+[admin2@linux-1 ~]$ ls /etc | grep "sudoers"
+sudoers
+sudoers.d
+[admin2@linux-1 ~]$ exit
+로그아웃
+[root@linux-1 ~]# usermod -aG wheel admin2
+[root@linux-1 ~]# grep wheel /etc/group
+wheel:x:10:student,admin1,admin2
+[root@linux-1 ~]# sudo useradd test5
+[root@linux-1 ~]# su - admin2
+[admin2@linux-1 ~]$ sudo useradd test5
+[sudo] admin2의 암호: 
+useradd: 'test5' 사용자가 이미 있습니다
+[admin2@linux-1 ~]$ exit
+로그아웃
+[root@linux-1 ~]# c
+[root@linux-1 ~]# grep wheel /etc/group
+wheel:x:10:student,admin1,admin2
+[root@linux-1 ~]# li /etc/group
+bash: li: command not found...
+[root@linux-1 ~]# ls /etc/group
+/etc/group
+[root@linux-1 ~]# ll /etc/group
+-rw-r--r--. 1 root root 1043  1월  2 13:16 /etc/group
+[root@linux-1 ~]# ls -l /etc/group
+-rw-r--r--. 1 root root 1043  1월  2 13:16 /etc/group
+[root@linux-1 ~]# ls -l /etc/sudoers
+-r--r-----. 1 root root 4328  4월 24  2023 /etc/sudoers
+[root@linux-1 ~]# ls -a /etc/group
+/etc/group
+[root@linux-1 ~]# cat /etc/group
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:student,admin1,admin2
+cdrom:x:11:
+mail:x:12:
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+users:x:100:
+nobody:x:65534:
+utmp:x:22:
+utempter:x:35:
+input:x:999:
+kvm:x:36:
+render:x:998:
+systemd-journal:x:190:
+systemd-coredump:x:997:
+dbus:x:81:
+polkitd:x:996:
+avahi:x:70:
+printadmin:x:995:
+ssh_keys:x:994:
+rtkit:x:172:
+pipewire:x:993:
+sssd:x:992:
+sgx:x:991:
+libstoragemgmt:x:990:
+systemd-oom:x:989:
+brlapi:x:988:
+tss:x:59:clevis
+geoclue:x:987:
+cockpit-ws:x:986:
+cockpit-wsinstance:x:985:
+flatpak:x:984:
+colord:x:983:
+clevis:x:982:
+setroubleshoot:x:981:
+gdm:x:42:
+gnome-initial-setup:x:980:
+sshd:x:74:
+slocate:x:21:
+chrony:x:979:
+dnsmasq:x:978:
+tcpdump:x:72:
+student:x:1000:
+user1:x:1001:
+sales:x:1002:
+admins:x:1003:a1,a2
+s1:x:1004:
+s2:x:1005:
+s3:x:1006:
+a1:x:1007:
+a2:x:1008:
+a3:x:1009:
+a4:x:1010:
+a5:x:1011:
+admin1:x:1012:
+test1:x:1013:
+test2:x:1014:
+admin2:x:1015:
+test5:x:1016:
+[root@linux-1 ~]# grep wheel /etc/sudoers
+## Allows people in group wheel to run all commands
+%wheel	ALL=(ALL)	ALL
+# %wheel	ALL=(ALL)	NOPASSWD: ALL
+[root@linux-1 ~]# 
