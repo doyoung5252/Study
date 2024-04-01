@@ -22,9 +22,9 @@ groff/     group      group-     grub.d/    grub2.cfg
 [root@linux-1 ~]# ls -s /etc/passwd /etc/shadow /etc/group
 4 /etc/group  4 /etc/passwd  4 /etc/shadow
 [root@linux-1 ~]# ls -ls /etc/passwd /etc/shadow /etc/group
-4 -rw-r--r--. 1 root root  821 12¿ù 27 17:52 /etc/group
-4 -rw-r--r--. 1 root root 2113 12¿ù 29 15:51 /etc/passwd
-4 ----------. 1 root root 1134 12¿ù 27 17:52 /etc/shadow
+4 -rw-r--r--. 1 root root  821 12ì›” 27 17:52 /etc/group
+4 -rw-r--r--. 1 root root 2113 12ì›” 29 15:51 /etc/passwd
+4 ----------. 1 root root 1134 12ì›” 27 17:52 /etc/shadow
 [root@linux-1 ~]# c
 [root@linux-1 ~]# head -n 5 /etc/passwd
 root:x:0:0:root:/root:/bin/bash
@@ -57,7 +57,7 @@ dnsmasq:!!:19718::::::
 tcpdump:!!:19718::::::
 student:$6$Nl4guuE1uUiibjug$pa6mDAQJQzYxg6a61ZhoiET7LBpIOm9lW3nEAYDPL.oL9J/do9j7yme2cGamncwywJr5cjQtVD42HULXnidfa0::0:99999:7:::
 [root@linux-1 ~]# head -5 /etc/passwd | cat -n | tail -5 /etc/shadow/
-tail: cannot open '/etc/shadow/' for reading: µğ·ºÅÍ¸®°¡ ¾Æ´Õ´Ï´Ù
+tail: cannot open '/etc/shadow/' for reading: ë””ë ‰í„°ë¦¬ê°€ ì•„ë‹™ë‹ˆë‹¤
 [root@linux-1 ~]# c
 [root@linux-1 ~]# head -3 /etc/passwd / etc/shadow
 ==> /etc/passwd <==
@@ -66,8 +66,8 @@ bin:x:1:1:bin:/bin:/sbin/nologin
 daemon:x:2:2:daemon:/sbin:/sbin/nologin
 
 ==> / <==
-head: '/'À»(¸¦) ÀĞ´Â µµÁß ¿À·ù ¹ß»ı: µğ·ºÅÍ¸®ÀÔ´Ï´Ù
-head: cannot open 'etc/shadow' for reading: ±×·± ÆÄÀÏÀÌ³ª µğ·ºÅÍ¸®°¡ ¾ø½À´Ï´Ù
+head: '/'ì„(ë¥¼) ì½ëŠ” ë„ì¤‘ ì˜¤ë¥˜ ë°œìƒ: ë””ë ‰í„°ë¦¬ì…ë‹ˆë‹¤
+head: cannot open 'etc/shadow' for reading: ê·¸ëŸ° íŒŒì¼ì´ë‚˜ ë””ë ‰í„°ë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤
 [root@linux-1 ~]# head -3 /etc/passwd /etc/shadow
 ==> /etc/passwd <==
 root:x:0:0:root:/root:/bin/bash
@@ -90,11 +90,11 @@ daemon:*:19469:0:99999:7:::
      9	daemon:*:19469:0:99999:7:::
 [root@linux-1 ~]# c
 [root@linux-1 ~]# tail --help
-»ç¿ë¹ı: tail [<¿É¼Ç>]... [<ÆÄÀÏ>]...
+ì‚¬ìš©ë²•: tail [<ì˜µì…˜>]... [<íŒŒì¼>]...
 Print the last 10 lines of each FILE to standard output.
 With more than one FILE, precede each with a header giving the file name.
 
-<ÆÄÀÏ>ÀÌ ÁÖ¾îÁöÁö ¾Ê°Å³ª - ÀÌ¸é Ç¥ÁØ ÀÔ·ÂÀ» ÀĞ½À´Ï´Ù.
+<íŒŒì¼>ì´ ì£¼ì–´ì§€ì§€ ì•Šê±°ë‚˜ - ì´ë©´ í‘œì¤€ ì…ë ¥ì„ ì½ìŠµë‹ˆë‹¤.
 
 Mandatory arguments to long options are mandatory for short options too.
   -c, --bytes=[+]NUM       output the last NUM bytes; or use -c +NUM to
@@ -120,8 +120,8 @@ Mandatory arguments to long options are mandatory for short options too.
                              least once every N seconds
   -v, --verbose            always output headers giving file names
   -z, --zero-terminated    line delimiter is NUL, not newline
-      --help     ÀÌ µµ¿ò¸»À» Ç¥½ÃÇÏ°í ³¡³À´Ï´Ù
-      --version  ¹öÀü Á¤º¸¸¦ Ãâ·ÂÇÏ°í ³¡³À´Ï´Ù
+      --help     ì´ ë„ì›€ë§ì„ í‘œì‹œí•˜ê³  ëëƒ…ë‹ˆë‹¤
+      --version  ë²„ì „ ì •ë³´ë¥¼ ì¶œë ¥í•˜ê³  ëëƒ…ë‹ˆë‹¤
 
 NUM may have a multiplier suffix:
 b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
@@ -179,11 +179,11 @@ or available locally via: info '(coreutils) tail invocation'
     36	tcpdump:x:72:72::/:/sbin/nologin
     37	student:x:1000:1000:student:/home/student:/bin/bash
 [root@linux-1 ~]# tail --help
-»ç¿ë¹ı: tail [<¿É¼Ç>]... [<ÆÄÀÏ>]...
+ì‚¬ìš©ë²•: tail [<ì˜µì…˜>]... [<íŒŒì¼>]...
 Print the last 10 lines of each FILE to standard output.
 With more than one FILE, precede each with a header giving the file name.
 
-<ÆÄÀÏ>ÀÌ ÁÖ¾îÁöÁö ¾Ê°Å³ª - ÀÌ¸é Ç¥ÁØ ÀÔ·ÂÀ» ÀĞ½À´Ï´Ù.
+<íŒŒì¼>ì´ ì£¼ì–´ì§€ì§€ ì•Šê±°ë‚˜ - ì´ë©´ í‘œì¤€ ì…ë ¥ì„ ì½ìŠµë‹ˆë‹¤.
 
 Mandatory arguments to long options are mandatory for short options too.
   -c, --bytes=[+]NUM       output the last NUM bytes; or use -c +NUM to
@@ -209,8 +209,8 @@ Mandatory arguments to long options are mandatory for short options too.
                              least once every N seconds
   -v, --verbose            always output headers giving file names
   -z, --zero-terminated    line delimiter is NUL, not newline
-      --help     ÀÌ µµ¿ò¸»À» Ç¥½ÃÇÏ°í ³¡³À´Ï´Ù
-      --version  ¹öÀü Á¤º¸¸¦ Ãâ·ÂÇÏ°í ³¡³À´Ï´Ù
+      --help     ì´ ë„ì›€ë§ì„ í‘œì‹œí•˜ê³  ëëƒ…ë‹ˆë‹¤
+      --version  ë²„ì „ ì •ë³´ë¥¼ ì¶œë ¥í•˜ê³  ëëƒ…ë‹ˆë‹¤
 
 NUM may have a multiplier suffix:
 b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
@@ -521,9 +521,9 @@ Usage: route [-nNvee] [-FC] [<AF>]           List kernel routing tables
 [root@linux-1 ~]# c
 [root@linux-1 ~]# useradd user1
 [root@linux-1 ~]# ls -ls /home
-ÇÕ°è 4
-4 drwx------. 14 student student 4096 12¿ù 28 13:08 student
-0 drwx------.  3 user1   user1     78  1¿ù  2 10:35 user1
+í•©ê³„ 4
+4 drwx------. 14 student student 4096 12ì›” 28 13:08 student
+0 drwx------.  3 user1   user1     78  1ì›”  2 10:35 user1
 [root@linux-1 ~]# tail -1 /etc/passwd /etc/shadow /etc/group
 tail: option used in invalid context -- 1
 [root@linux-1 ~]# tail -n -1 /etc/passwd /etc/shadow /etc/group
@@ -564,49 +564,49 @@ user1:!!:19724:0:99999:7:::
 ==> /etc/group <==
 user1:x:1001:
 [root@linux-1 ~]# passwd  --help 
-»ç¿ë¹ı: passwd [¿É¼Ç...] <accountName>
-  -k, --keep-tokens       ¸¸±âµÇÁö ¾Ê´Â ÀÎÁõ ÅäÅ« »ç¿ë
-  -d, --delete            ÀÌ¸§ÀÌ ÁöÁ¤µÈ °èÁ¤ÀÇ ºñ¹Ğ ¹øÈ£¸¦
-                          »èÁ¦ÇÏ±â (root·Î¸¸ ½ÇÇà °¡´É); Á¸ÀçÇÏ´Â
-                          ºñ¹Ğ¹øÈ£ Àá±İµµ ÇØÁ¦µË´Ï´Ù 
-  -l, --lock              ÀÌ¸§ÀÌ ÁöÁ¤µÈ °èÁ¤ÀÇ ºñ¹Ğ ¹øÈ£¸¦
-                          Àá±×±â (root·Î¸¸ ½ÇÇà °¡´É) 
-  -u, --unlock            ÀÌ¸§ÀÌ ÁöÁ¤µÈ °èÁ¤ÀÇ ºñ¹Ğ¹øÈ£¸¦ Àá±İ
-                          ÇØÁ¦ÇÏ±â (root·Î¸¸ ½ÇÇà °¡´É)  
-  -e, --expire            ÀÌ¸§ÀÌ ÁöÁ¤µÈ °èÁ¤ÀÇ ºñ¹Ğ ¹øÈ£
-                          ¸¸·á½ÃÅ°±â (root·Î¸¸ ½ÇÇà °¡´É) 
-  -f, --force             °­Á¦·Î ½ÇÇàÇÏ±â
-  -x, --maximum=DAYS      ºñ¹Ğ¹øÈ£ ÃÖ´ë À¯È¿±â°£ (root·Î¸¸ ½ÇÇà
-                          °¡´É)
-  -n, --minimum=DAYS      ºñ¹Ğ¹øÈ£ ÃÖ¼Ò À¯È¿±â°£ (root·Î¸¸ ½ÇÇà
-                          °¡´É)
-  -w, --warning=DAYS      ºñ¹Ğ¹øÈ£°¡ ¸¸·áµÇ±â Àü »ç¿ëÀÚ¿¡°Ô
-                          ÁÖ¾îÁö´Â °æ°í ±â°£ (root·Î¸¸ ½ÇÇà °¡´É)
-  -i, --inactive=DAYS     ºñ¹Ğ¹øÈ£ ¸¸·á ÈÄ °èÁ¤ÀÌ ºñÈ°¼ºÈ­µÇ´Â
-                          ±â°£ (root·Î¸¸ ½ÇÇà °¡´É)
-  -S, --status            named °èÁ¤¿¡ ºñ¹Ğ ¹øÈ£ »óÅÂ º¸°íÇÏ±â
-                          (root·Î¸¸ ½ÇÇà °¡´É)
-      --stdin             stdin¿¡¼­ »õ ÅäÅ«À» ÀĞ±â (root·Î¸¸ ½ÇÇà
-                          °¡´É)
+ì‚¬ìš©ë²•: passwd [ì˜µì…˜...] <accountName>
+  -k, --keep-tokens       ë§Œê¸°ë˜ì§€ ì•ŠëŠ” ì¸ì¦ í† í° ì‚¬ìš©
+  -d, --delete            ì´ë¦„ì´ ì§€ì •ëœ ê³„ì •ì˜ ë¹„ë°€ ë²ˆí˜¸ë¥¼
+                          ì‚­ì œí•˜ê¸° (rootë¡œë§Œ ì‹¤í–‰ ê°€ëŠ¥); ì¡´ì¬í•˜ëŠ”
+                          ë¹„ë°€ë²ˆí˜¸ ì ê¸ˆë„ í•´ì œë©ë‹ˆë‹¤ 
+  -l, --lock              ì´ë¦„ì´ ì§€ì •ëœ ê³„ì •ì˜ ë¹„ë°€ ë²ˆí˜¸ë¥¼
+                          ì ê·¸ê¸° (rootë¡œë§Œ ì‹¤í–‰ ê°€ëŠ¥) 
+  -u, --unlock            ì´ë¦„ì´ ì§€ì •ëœ ê³„ì •ì˜ ë¹„ë°€ë²ˆí˜¸ë¥¼ ì ê¸ˆ
+                          í•´ì œí•˜ê¸° (rootë¡œë§Œ ì‹¤í–‰ ê°€ëŠ¥)  
+  -e, --expire            ì´ë¦„ì´ ì§€ì •ëœ ê³„ì •ì˜ ë¹„ë°€ ë²ˆí˜¸
+                          ë§Œë£Œì‹œí‚¤ê¸° (rootë¡œë§Œ ì‹¤í–‰ ê°€ëŠ¥) 
+  -f, --force             ê°•ì œë¡œ ì‹¤í–‰í•˜ê¸°
+  -x, --maximum=DAYS      ë¹„ë°€ë²ˆí˜¸ ìµœëŒ€ ìœ íš¨ê¸°ê°„ (rootë¡œë§Œ ì‹¤í–‰
+                          ê°€ëŠ¥)
+  -n, --minimum=DAYS      ë¹„ë°€ë²ˆí˜¸ ìµœì†Œ ìœ íš¨ê¸°ê°„ (rootë¡œë§Œ ì‹¤í–‰
+                          ê°€ëŠ¥)
+  -w, --warning=DAYS      ë¹„ë°€ë²ˆí˜¸ê°€ ë§Œë£Œë˜ê¸° ì „ ì‚¬ìš©ìì—ê²Œ
+                          ì£¼ì–´ì§€ëŠ” ê²½ê³  ê¸°ê°„ (rootë¡œë§Œ ì‹¤í–‰ ê°€ëŠ¥)
+  -i, --inactive=DAYS     ë¹„ë°€ë²ˆí˜¸ ë§Œë£Œ í›„ ê³„ì •ì´ ë¹„í™œì„±í™”ë˜ëŠ”
+                          ê¸°ê°„ (rootë¡œë§Œ ì‹¤í–‰ ê°€ëŠ¥)
+  -S, --status            named ê³„ì •ì— ë¹„ë°€ ë²ˆí˜¸ ìƒíƒœ ë³´ê³ í•˜ê¸°
+                          (rootë¡œë§Œ ì‹¤í–‰ ê°€ëŠ¥)
+      --stdin             stdinì—ì„œ ìƒˆ í† í°ì„ ì½ê¸° (rootë¡œë§Œ ì‹¤í–‰
+                          ê°€ëŠ¥)
 
 Help options:
-  -?, --help              ÀÌ µµ¿ò¸»À» º¸¿©Áİ´Ï´Ù
-      --usage             °£´ÜÇÑ »ç¿ë¹ıÀ» º¸¿©Áİ´Ï´Ù
+  -?, --help              ì´ ë„ì›€ë§ì„ ë³´ì—¬ì¤ë‹ˆë‹¤
+      --usage             ê°„ë‹¨í•œ ì‚¬ìš©ë²•ì„ ë³´ì—¬ì¤ë‹ˆë‹¤
 [root@linux-1 ~]# c
 [root@linux-1 ~]# passwd --help | -3
 bash: -3: command not found...
 [root@linux-1 ~]# passwd --help |head -3
-»ç¿ë¹ı: passwd [¿É¼Ç...] <accountName>
-  -k, --keep-tokens       ¸¸±âµÇÁö ¾Ê´Â ÀÎÁõ ÅäÅ« »ç¿ë
-  -d, --delete            ÀÌ¸§ÀÌ ÁöÁ¤µÈ °èÁ¤ÀÇ ºñ¹Ğ ¹øÈ£¸¦
+ì‚¬ìš©ë²•: passwd [ì˜µì…˜...] <accountName>
+  -k, --keep-tokens       ë§Œê¸°ë˜ì§€ ì•ŠëŠ” ì¸ì¦ í† í° ì‚¬ìš©
+  -d, --delete            ì´ë¦„ì´ ì§€ì •ëœ ê³„ì •ì˜ ë¹„ë°€ ë²ˆí˜¸ë¥¼
 [root@linux-1 ~]# passwd user1
-user1 »ç¿ëÀÚÀÇ ºñ¹Ğ ¹øÈ£ º¯°æ Áß
-»õ ¾ÏÈ£:
-Àß¸øµÈ ¾ÏÈ£: ¾ÏÈ£°¡ ¾ÕµÚ ¾î´ÀÂÊ¿¡¼­ ÀĞ¾îµµ °°Àº ¹®¸ÆÀÓ
-»õ ¾ÏÈ£ ÀçÀÔ·Â:
-passwd: ¸ğµç ÀÎÁõ ÅäÅ«ÀÌ ¼º°øÀûÀ¸·Î ¾÷µ¥ÀÌÆ® µÇ¾ú½À´Ï´Ù.
+user1 ì‚¬ìš©ìì˜ ë¹„ë°€ ë²ˆí˜¸ ë³€ê²½ ì¤‘
+ìƒˆ ì•”í˜¸:
+ì˜ëª»ëœ ì•”í˜¸: ì•”í˜¸ê°€ ì•ë’¤ ì–´ëŠìª½ì—ì„œ ì½ì–´ë„ ê°™ì€ ë¬¸ë§¥ì„
+ìƒˆ ì•”í˜¸ ì¬ì…ë ¥:
+passwd: ëª¨ë“  ì¸ì¦ í† í°ì´ ì„±ê³µì ìœ¼ë¡œ ì—…ë°ì´íŠ¸ ë˜ì—ˆìŠµë‹ˆë‹¤.
 [root@linux-1 ~]# tail  1 /etc/passwd /etc/shadow
-tail: cannot open '1' for reading: ±×·± ÆÄÀÏÀÌ³ª µğ·ºÅÍ¸®°¡ ¾ø½À´Ï´Ù
+tail: cannot open '1' for reading: ê·¸ëŸ° íŒŒì¼ì´ë‚˜ ë””ë ‰í„°ë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤
 ==> /etc/passwd <==
 clevis:x:983:982:Clevis Decryption Framework unprivileged user:/var/cache/clevis:/usr/sbin/nologin
 setroubleshoot:x:982:981:SELinux troubleshoot server:/var/lib/setroubleshoot:/usr/sbin/nologin
@@ -633,7 +633,7 @@ user1:$6$cQW0XkIpftOHgitG$tgg1QFIxzGEJNU9Wx9Dvy3aW4N2n2WvHlfhvorVdi4ARg9gVwOV.ih
 [root@linux-1 ~]# tail  -1 /etc/passwd /etc/shadow
 tail: option used in invalid context -- 1
 [root@linux-1 ~]# /c
--bash: /c: ±×·± ÆÄÀÏÀÌ³ª µğ·ºÅÍ¸®°¡ ¾ø½À´Ï´Ù
+-bash: /c: ê·¸ëŸ° íŒŒì¼ì´ë‚˜ ë””ë ‰í„°ë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤
 [root@linux-1 ~]# c
 [root@linux-1 ~]# tail  -1 /etc/passwd /etc/shadow
 tail: option used in invalid context -- 1
@@ -649,25 +649,25 @@ Try 'su --help' for more information.
 su: user user2 does not exist or the user entry does not contain all the required fields
 [root@linux-1 ~]# su - user1
 [user1@linux-1 ~]$ su - root
-¾ÏÈ£:
+ì•”í˜¸:
 [root@linux-1 ~]# su - student
 [student@linux-1 ~]$ su - root
-¾ÏÈ£:
+ì•”í˜¸:
 [root@linux-1 ~]# su - user1
 [user1@linux-1 ~]$ pwd
 /home/user1
 [user1@linux-1 ~]$ exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 [root@linux-1 ~]# exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 [student@linux-1 ~]$ exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 [root@linux-1 ~]# exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 [user1@linux-1 ~]$ exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 [root@linux-1 ~]# exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 
 Connection closed.
 
@@ -699,12 +699,12 @@ bash: c: command not found...
 bash: c: command not found...
 [user1@linux-1 ~]$ vim .bashrc
 [user1@linux-1 ~]$ /clear
--bash: /clear: ±×·± ÆÄÀÏÀÌ³ª µğ·ºÅÍ¸®°¡ ¾ø½À´Ï´Ù
+-bash: /clear: ê·¸ëŸ° íŒŒì¼ì´ë‚˜ ë””ë ‰í„°ë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤
 [user1@linux-1 ~]$ clear
 [user1@linux-1 ~]$ tail -1 /etc/passwd
 user1:x:1001:1001::/home/user1:/bin/bash
 [user1@linux-1 ~]$ exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 [root@linux-1 ~]# c
 [root@linux-1 ~]# vim .bashrc
 [root@linux-1 ~]# vim /etc/passwd
@@ -714,18 +714,18 @@ tail: option used in invalid context -- 1
 [root@linux-1 ~]# tail  -1 /etc/passwd
 user1:x:1001:1001::/home/user111:/bin/bash
 [root@linux-1 ~]# su - user1
-su: warning: cannot change directory to /home/user111: ±×·± ÆÄÀÏÀÌ³ª µğ·ºÅÍ¸®°¡ ¾ø½À´Ï´Ù
+su: warning: cannot change directory to /home/user111: ê·¸ëŸ° íŒŒì¼ì´ë‚˜ ë””ë ‰í„°ë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤
 [user1@linux-1 root]$ ls - l /home
-ls: cannot access '-': Çã°¡ °ÅºÎ
-ls: cannot access 'l': Çã°¡ °ÅºÎ
+ls: cannot access '-': í—ˆê°€ ê±°ë¶€
+ls: cannot access 'l': í—ˆê°€ ê±°ë¶€
 /home:
 student  user1
 [user1@linux-1 root]$ exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 [root@linux-1 ~]# ls -l /home
-ÇÕ°è 8
-drwx------. 14 student student 4096 12¿ù 28 13:08 student
-drwx------. 14 user1   user1   4096  1¿ù  2 11:02 user1
+í•©ê³„ 8
+drwx------. 14 student student 4096 12ì›” 28 13:08 student
+drwx------. 14 user1   user1   4096  1ì›”  2 11:02 user1
 [root@linux-1 ~]# tail -1 /etc/passwd
 user1:x:1001:1001::/home/user111:/bin/bash
 [root@linux-1 ~]# vim /etc/passwd
@@ -738,7 +738,7 @@ usermod: user user1 is currently used by process 4180
 user1:x:1001:1001::/home/user1:/bin/bash
 [root@linux-1 ~]# su - user1
 [user1@linux-1 ~]$ exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 [root@linux-1 ~]# mkdir -pv /bighome
 mkdir: created directory '/bighome'
 [root@linux-1 ~]# cd /bighome
@@ -746,65 +746,65 @@ mkdir: created directory '/bighome'
 /bighome
 [root@linux-1 bighome]# useradd -d /bighome/user2 user2
 [root@linux-1 bighome]# ls -l
-ÇÕ°è 0
-drwx------. 3 user2 user2 78  1¿ù  2 11:16 user2
+í•©ê³„ 0
+drwx------. 3 user2 user2 78  1ì›”  2 11:16 user2
 [root@linux-1 bighome]# pwd
 /bighome
 [root@linux-1 bighome]# ls -l /home /bighome/
 /bighome/:
-ÇÕ°è 0
-drwx------. 3 user2 user2 78  1¿ù  2 11:16 user2
+í•©ê³„ 0
+drwx------. 3 user2 user2 78  1ì›”  2 11:16 user2
 
 /home:
-ÇÕ°è 8
-drwx------. 14 student student 4096 12¿ù 28 13:08 student
-drwx------. 14 user1   user1   4096  1¿ù  2 11:02 user1
+í•©ê³„ 8
+drwx------. 14 student student 4096 12ì›” 28 13:08 student
+drwx------. 14 user1   user1   4096  1ì›”  2 11:02 user1
 [root@linux-1 bighome]# ls -l /etc/default/useradd 
--rw-r--r--. 1 root root 119 10¿ù 31 04:54 /etc/default/useradd
+-rw-r--r--. 1 root root 119 10ì›” 31 04:54 /etc/default/useradd
 [root@linux-1 bighome]# vim /etc/default/useradd 
 [root@linux-1 bighome]# c
 [root@linux-1 bighome]# useradd user3
 [root@linux-1 bighome]# ls -l /bighome
-ÇÕ°è 0
-drwx------. 3 user2 user2 78  1¿ù  2 11:16 user2
-drwx------. 3 user3 user3 78  1¿ù  2 11:20 user3
+í•©ê³„ 0
+drwx------. 3 user2 user2 78  1ì›”  2 11:16 user2
+drwx------. 3 user3 user3 78  1ì›”  2 11:20 user3
 [root@linux-1 bighome]# vim /etc/default/useradd 
 [root@linux-1 bighome]# cd
 [root@linux-1 ~]# userdel -r user1
 userdel: user user1 is currently used by process 4180
 [root@linux-1 ~]# ls -l
-ÇÕ°è 84
--rw-------. 1 root root  1008 12¿ù 27 17:52 anaconda-ks.cfg
--rw-r--r--. 1 root root 81569 12¿ù 29 17:24 help.txt
-drwxr-xr-x. 2 root root     6 12¿ù 29 13:11 test2023
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 °ø°³
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ´Ù¿î·Îµå
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¹®¼­
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¹ÙÅÁÈ­¸é
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ºñµğ¿À
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 »çÁø
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¼­½Ä
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 À½¾Ç
+í•©ê³„ 84
+-rw-------. 1 root root  1008 12ì›” 27 17:52 anaconda-ks.cfg
+-rw-r--r--. 1 root root 81569 12ì›” 29 17:24 help.txt
+drwxr-xr-x. 2 root root     6 12ì›” 29 13:11 test2023
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ê³µê°œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë‹¤ìš´ë¡œë“œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë¬¸ì„œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë°”íƒ•í™”ë©´
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë¹„ë””ì˜¤
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ì‚¬ì§„
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ì„œì‹
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ìŒì•…
 [root@linux-1 ~]# useradd user1
-useradd: 'user1' »ç¿ëÀÚ°¡ ÀÌ¹Ì ÀÖ½À´Ï´Ù
+useradd: 'user1' ì‚¬ìš©ìê°€ ì´ë¯¸ ìˆìŠµë‹ˆë‹¤
 [root@linux-1 ~]# c
 [root@linux-1 ~]# ls -l /root
-ÇÕ°è 84
--rw-------. 1 root root  1008 12¿ù 27 17:52 anaconda-ks.cfg
--rw-r--r--. 1 root root 81569 12¿ù 29 17:24 help.txt
-drwxr-xr-x. 2 root root     6 12¿ù 29 13:11 test2023
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 °ø°³
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ´Ù¿î·Îµå
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¹®¼­
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¹ÙÅÁÈ­¸é
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ºñµğ¿À
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 »çÁø
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¼­½Ä
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 À½¾Ç
+í•©ê³„ 84
+-rw-------. 1 root root  1008 12ì›” 27 17:52 anaconda-ks.cfg
+-rw-r--r--. 1 root root 81569 12ì›” 29 17:24 help.txt
+drwxr-xr-x. 2 root root     6 12ì›” 29 13:11 test2023
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ê³µê°œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë‹¤ìš´ë¡œë“œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë¬¸ì„œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë°”íƒ•í™”ë©´
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë¹„ë””ì˜¤
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ì‚¬ì§„
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ì„œì‹
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ìŒì•…
 [root@linux-1 ~]# userdel -r user1
 userdel: user user1 is currently used by process 4180
 [root@linux-1 ~]# useradd user2
-useradd: 'user2' »ç¿ëÀÚ°¡ ÀÌ¹Ì ÀÖ½À´Ï´Ù
+useradd: 'user2' ì‚¬ìš©ìê°€ ì´ë¯¸ ìˆìŠµë‹ˆë‹¤
 [root@linux-1 ~]# userdel -r user2
 [root@linux-1 ~]# tail -5 /etc/passwd
 dnsmasq:x:979:978:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
@@ -813,37 +813,37 @@ student:x:1000:1000:student:/home/student:/bin/bash
 user1:x:1001:1001::/home/user1:/bin/bash
 user3:x:1003:1003::/bighome/user3:/bin/bash
 [root@linux-1 ~]# ls -l /home
-ÇÕ°è 8
-drwx------. 14 student student 4096 12¿ù 28 13:08 student
-drwx------. 14 user1   user1   4096  1¿ù  2 11:02 user1
+í•©ê³„ 8
+drwx------. 14 student student 4096 12ì›” 28 13:08 student
+drwx------. 14 user1   user1   4096  1ì›”  2 11:02 user1
 [root@linux-1 ~]# userdel -r user1
 userdel: user user1 is currently used by process 4180
 [root@linux-1 ~]# c
 [root@linux-1 ~]# ls -l /home
-ÇÕ°è 8
-drwx------. 14 student student 4096 12¿ù 28 13:08 student
-drwx------. 14 user1   user1   4096  1¿ù  2 11:02 user1
+í•©ê³„ 8
+drwx------. 14 student student 4096 12ì›” 28 13:08 student
+drwx------. 14 user1   user1   4096  1ì›”  2 11:02 user1
 [root@linux-1 ~]# userdel -r user1
 userdel: user user1 is currently used by process 4180
 [root@linux-1 ~]# rm -rvf /bighome/user1
 [root@linux-1 ~]# rm -rvf /user1
 [root@linux-1 ~]# ls -l
-ÇÕ°è 84
--rw-------. 1 root root  1008 12¿ù 27 17:52 anaconda-ks.cfg
--rw-r--r--. 1 root root 81569 12¿ù 29 17:24 help.txt
-drwxr-xr-x. 2 root root     6 12¿ù 29 13:11 test2023
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 °ø°³
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ´Ù¿î·Îµå
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¹®¼­
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¹ÙÅÁÈ­¸é
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ºñµğ¿À
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 »çÁø
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¼­½Ä
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 À½¾Ç
+í•©ê³„ 84
+-rw-------. 1 root root  1008 12ì›” 27 17:52 anaconda-ks.cfg
+-rw-r--r--. 1 root root 81569 12ì›” 29 17:24 help.txt
+drwxr-xr-x. 2 root root     6 12ì›” 29 13:11 test2023
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ê³µê°œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë‹¤ìš´ë¡œë“œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë¬¸ì„œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë°”íƒ•í™”ë©´
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë¹„ë””ì˜¤
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ì‚¬ì§„
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ì„œì‹
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ìŒì•…
 [root@linux-1 ~]# ls -l /home
-ÇÕ°è 8
-drwx------. 14 student student 4096 12¿ù 28 13:08 student
-drwx------. 14 user1   user1   4096  1¿ù  2 11:02 user1
+í•©ê³„ 8
+drwx------. 14 student student 4096 12ì›” 28 13:08 student
+drwx------. 14 user1   user1   4096  1ì›”  2 11:02 user1
 [root@linux-1 ~]# rm -rvf /home/user1
 removed directory '/home/user1/.mozilla/extensions'
 removed directory '/home/user1/.mozilla/plugins'
@@ -905,14 +905,14 @@ removed '/home/user1/.local/state/wireplumber/restore-stream'
 removed directory '/home/user1/.local/state/wireplumber'
 removed directory '/home/user1/.local/state'
 removed directory '/home/user1/.local'
-removed directory '/home/user1/¹ÙÅÁÈ­¸é'
-removed directory '/home/user1/´Ù¿î·Îµå'
-removed directory '/home/user1/¼­½Ä'
-removed directory '/home/user1/°ø°³'
-removed directory '/home/user1/¹®¼­'
-removed directory '/home/user1/À½¾Ç'
-removed directory '/home/user1/»çÁø'
-removed directory '/home/user1/ºñµğ¿À'
+removed directory '/home/user1/ë°”íƒ•í™”ë©´'
+removed directory '/home/user1/ë‹¤ìš´ë¡œë“œ'
+removed directory '/home/user1/ì„œì‹'
+removed directory '/home/user1/ê³µê°œ'
+removed directory '/home/user1/ë¬¸ì„œ'
+removed directory '/home/user1/ìŒì•…'
+removed directory '/home/user1/ì‚¬ì§„'
+removed directory '/home/user1/ë¹„ë””ì˜¤'
 removed '/home/user1/.config/user-dirs.dirs'
 removed '/home/user1/.config/user-dirs.locale'
 removed '/home/user1/.config/ibus/bus/17bacd6518e44a93a8bec09b6aff37fe-unix-wayland-0'
@@ -1081,36 +1081,36 @@ removed '/home/user1/.viminfo'
 removed directory '/home/user1'
 [root@linux-1 ~]# c
 [root@linux-1 ~]# ls -s /home
-ÇÕ°è 4
+í•©ê³„ 4
 4 student
 [root@linux-1 ~]# ls -l /home
-ÇÕ°è 4
-drwx------. 14 student student 4096 12¿ù 28 13:08 student
+í•©ê³„ 4
+drwx------. 14 student student 4096 12ì›” 28 13:08 student
 [root@linux-1 ~]# ll
-ÇÕ°è 84
--rw-------. 1 root root  1008 12¿ù 27 17:52 anaconda-ks.cfg
--rw-r--r--. 1 root root 81569 12¿ù 29 17:24 help.txt
-drwxr-xr-x. 2 root root     6 12¿ù 29 13:11 test2023
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 °ø°³
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ´Ù¿î·Îµå
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¹®¼­
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¹ÙÅÁÈ­¸é
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ºñµğ¿À
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 »çÁø
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¼­½Ä
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 À½¾Ç
+í•©ê³„ 84
+-rw-------. 1 root root  1008 12ì›” 27 17:52 anaconda-ks.cfg
+-rw-r--r--. 1 root root 81569 12ì›” 29 17:24 help.txt
+drwxr-xr-x. 2 root root     6 12ì›” 29 13:11 test2023
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ê³µê°œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë‹¤ìš´ë¡œë“œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë¬¸ì„œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë°”íƒ•í™”ë©´
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë¹„ë””ì˜¤
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ì‚¬ì§„
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ì„œì‹
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ìŒì•…
 [root@linux-1 ~]# alias | grep ll
 alias ll='ls -l --color=auto'
 [root@linux-1 ~]# alias grep
 alias grep='grep --color=auto'
 [root@linux-1 ~]# ls -l /bighome
-ÇÕ°è 0
-drwx------. 3 user3 user3 78  1¿ù  2 11:20 user3
+í•©ê³„ 0
+drwx------. 3 user3 user3 78  1ì›”  2 11:20 user3
 [root@linux-1 ~]# userdel -r /bighome/user3
-userdel: '/bighome/user3' »ç¿ëÀÚ°¡ ¾ø½À´Ï´Ù
+userdel: '/bighome/user3' ì‚¬ìš©ìê°€ ì—†ìŠµë‹ˆë‹¤
 [root@linux-1 ~]# ll /bighome/
-ÇÕ°è 0
-drwx------. 3 user3 user3 78  1¿ù  2 11:20 user3
+í•©ê³„ 0
+drwx------. 3 user3 user3 78  1ì›”  2 11:20 user3
 [root@linux-1 ~]# userdel -r /bighome/user3 user3
 Usage: userdel [options] LOGIN
 
@@ -1139,15 +1139,15 @@ Options:
 
 [root@linux-1 ~]# userdel -r user3
 [root@linux-1 ~]# ll /bighome/
-ÇÕ°è 0
+í•©ê³„ 0
 [root@linux-1 ~]# ls -l /bighome
-ÇÕ°è 0
+í•©ê³„ 0
 [root@linux-1 ~]# rn -rvf /bighome
 bash: rn: command not found...
 [root@linux-1 ~]# rm -rvf /bighome
 removed directory '/bighome'
 [root@linux-1 ~]# ls
-anaconda-ks.cfg  help.txt  test2023  °ø°³  ´Ù¿î·Îµå  ¹®¼­  ¹ÙÅÁÈ­¸é  ºñµğ¿À  »çÁø  ¼­½Ä  À½¾Ç
+anaconda-ks.cfg  help.txt  test2023  ê³µê°œ  ë‹¤ìš´ë¡œë“œ  ë¬¸ì„œ  ë°”íƒ•í™”ë©´  ë¹„ë””ì˜¤  ì‚¬ì§„  ì„œì‹  ìŒì•…
 [root@linux-1 ~]# c
 [root@linux-1 ~]# groupadd --help | head -5
 Usage: groupadd [options] GROUP
@@ -1164,35 +1164,35 @@ Options:
 [root@linux-1 ~]# c
 [root@linux-1 ~]# groupadd sales
 [root@linux-1 ~]# ls -l
-ÇÕ°è 84
--rw-------. 1 root root  1008 12¿ù 27 17:52 anaconda-ks.cfg
--rw-r--r--. 1 root root 81569 12¿ù 29 17:24 help.txt
-drwxr-xr-x. 2 root root     6 12¿ù 29 13:11 test2023
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 °ø°³
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ´Ù¿î·Îµå
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¹®¼­
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¹ÙÅÁÈ­¸é
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ºñµğ¿À
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 »çÁø
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¼­½Ä
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 À½¾Ç
+í•©ê³„ 84
+-rw-------. 1 root root  1008 12ì›” 27 17:52 anaconda-ks.cfg
+-rw-r--r--. 1 root root 81569 12ì›” 29 17:24 help.txt
+drwxr-xr-x. 2 root root     6 12ì›” 29 13:11 test2023
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ê³µê°œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë‹¤ìš´ë¡œë“œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë¬¸ì„œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë°”íƒ•í™”ë©´
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë¹„ë””ì˜¤
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ì‚¬ì§„
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ì„œì‹
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ìŒì•…
 [root@linux-1 ~]# ls group
-ls: cannot access 'group': ±×·± ÆÄÀÏÀÌ³ª µğ·ºÅÍ¸®°¡ ¾ø½À´Ï´Ù
+ls: cannot access 'group': ê·¸ëŸ° íŒŒì¼ì´ë‚˜ ë””ë ‰í„°ë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤
 [root@linux-1 ~]# c
 [root@linux-1 ~]# groupadd admins
 [root@linux-1 ~]# ll
-ÇÕ°è 84
--rw-------. 1 root root  1008 12¿ù 27 17:52 anaconda-ks.cfg
--rw-r--r--. 1 root root 81569 12¿ù 29 17:24 help.txt
-drwxr-xr-x. 2 root root     6 12¿ù 29 13:11 test2023
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 °ø°³
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ´Ù¿î·Îµå
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¹®¼­
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¹ÙÅÁÈ­¸é
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ºñµğ¿À
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 »çÁø
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 ¼­½Ä
-drwxr-xr-x. 2 root root     6 12¿ù 27 17:57 À½¾Ç
+í•©ê³„ 84
+-rw-------. 1 root root  1008 12ì›” 27 17:52 anaconda-ks.cfg
+-rw-r--r--. 1 root root 81569 12ì›” 29 17:24 help.txt
+drwxr-xr-x. 2 root root     6 12ì›” 29 13:11 test2023
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ê³µê°œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë‹¤ìš´ë¡œë“œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë¬¸ì„œ
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë°”íƒ•í™”ë©´
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ë¹„ë””ì˜¤
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ì‚¬ì§„
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ì„œì‹
+drwxr-xr-x. 2 root root     6 12ì›” 27 17:57 ìŒì•…
 [root@linux-1 ~]# c
 [root@linux-1 ~]# tail -2 /etc/group
 sales:x:1002:
@@ -1215,7 +1215,7 @@ userdel: user user1 is currently used by process 4180
 [root@linux-1 ~]# c
 [root@linux-1 ~]# useradd -G sales  s1
 [root@linux-1 ~]# tail -2 group
-tail: cannot open 'group' for reading: ±×·± ÆÄÀÏÀÌ³ª µğ·ºÅÍ¸®°¡ ¾ø½À´Ï´Ù
+tail: cannot open 'group' for reading: ê·¸ëŸ° íŒŒì¼ì´ë‚˜ ë””ë ‰í„°ë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤
 [root@linux-1 ~]# tail -2 /etc/group
 admins:x:1003:
 s1:x:1004:
@@ -1228,7 +1228,7 @@ s1:x:1004:
 [root@linux-1 ~]# group -i -w "sales" /etc/gorup
 bash: group: command not found...
 [root@linux-1 ~]# grep -i -w "sales" /etc/gorup
-grep: /etc/gorup: ±×·± ÆÄÀÏÀÌ³ª µğ·ºÅÍ¸®°¡ ¾ø½À´Ï´Ù
+grep: /etc/gorup: ê·¸ëŸ° íŒŒì¼ì´ë‚˜ ë””ë ‰í„°ë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤
 [root@linux-1 ~]# grep -i -w "sales" /etc/group
 sales:x:1002:s1
 [root@linux-1 ~]# useradd -G sales s2
@@ -1247,7 +1247,7 @@ admins:x:1003:
 [root@linux-1 ~]# useradd -G admins a2
 [root@linux-1 ~]# useradd -G admins a3
 [root@linux-1 ~]# userdel -G admins a3
-userdel: ºÎÀûÀıÇÑ ¿É¼Ç -- 'G'
+userdel: ë¶€ì ì ˆí•œ ì˜µì…˜ -- 'G'
 Usage: userdel [options] LOGIN
 
 Options:
@@ -1291,7 +1291,7 @@ Options:
 admins:x:1003:a1,a2,a3
 [root@linux-1 ~]# useradd a4
 [root@linux-1 ~]# useradd -G admins a4
-useradd: 'a4' »ç¿ëÀÚ°¡ ÀÌ¹Ì ÀÖ½À´Ï´Ù
+useradd: 'a4' ì‚¬ìš©ìê°€ ì´ë¯¸ ìˆìŠµë‹ˆë‹¤
 [root@linux-1 ~]# usermod -G admins a4
 [root@linux-1 ~]# grep -i -w "admins" /etc/group
 admins:x:1003:a1,a2,a3,a4
@@ -1373,7 +1373,7 @@ Options:
                                 set the list of administrators for GROUP
 Except for the -A and -M options, the options cannot be combined.
 [root@linux-1 ~]# gpasswd -d "a5" /etc/group
-gpasswd: '/etc/group' ±×·ìÀÌ /etc/group¿¡ ¾ø½À´Ï´Ù
+gpasswd: '/etc/group' ê·¸ë£¹ì´ /etc/groupì— ì—†ìŠµë‹ˆë‹¤
 [root@linux-1 ~]# gpasswd -d "a5"
 Usage: gpasswd [option] GROUP
 
@@ -1389,37 +1389,37 @@ Options:
                                 set the list of administrators for GROUP
 Except for the -A and -M options, the options cannot be combined.
 [root@linux-1 ~]# gpasswd -d "a5" /etc/group/
-gpasswd: '/etc/group/' ±×·ìÀÌ /etc/group¿¡ ¾ø½À´Ï´Ù
+gpasswd: '/etc/group/' ê·¸ë£¹ì´ /etc/groupì— ì—†ìŠµë‹ˆë‹¤
 [root@linux-1 ~]# c
 [root@linux-1 ~]# gpasswd -d a5 aminds
-gpasswd: 'aminds' ±×·ìÀÌ /etc/group¿¡ ¾ø½À´Ï´Ù
+gpasswd: 'aminds' ê·¸ë£¹ì´ /etc/groupì— ì—†ìŠµë‹ˆë‹¤
 [root@linux-1 ~]# gpasswd -d a5 admins
-»ç¿ëÀÚ a5À»(¸¦) ±×·ì admins¿¡¼­ Á¦°ÅÇÏ´Â Áß
+ì‚¬ìš©ì a5ì„(ë¥¼) ê·¸ë£¹ adminsì—ì„œ ì œê±°í•˜ëŠ” ì¤‘
 [root@linux-1 ~]# gpasswd -d a4 admins
-»ç¿ëÀÚ a4À»(¸¦) ±×·ì admins¿¡¼­ Á¦°ÅÇÏ´Â Áß
+ì‚¬ìš©ì a4ì„(ë¥¼) ê·¸ë£¹ adminsì—ì„œ ì œê±°í•˜ëŠ” ì¤‘
 [root@linux-1 ~]# gpasswd -d a3 admins
-»ç¿ëÀÚ a3À»(¸¦) ±×·ì admins¿¡¼­ Á¦°ÅÇÏ´Â Áß
+ì‚¬ìš©ì a3ì„(ë¥¼) ê·¸ë£¹ adminsì—ì„œ ì œê±°í•˜ëŠ” ì¤‘
 [root@linux-1 ~]# gpasswd -d s1 sales
-»ç¿ëÀÚ s1À»(¸¦) ±×·ì sales¿¡¼­ Á¦°ÅÇÏ´Â Áß
+ì‚¬ìš©ì s1ì„(ë¥¼) ê·¸ë£¹ salesì—ì„œ ì œê±°í•˜ëŠ” ì¤‘
 [root@linux-1 ~]# gpasswd -d s2 sales
-»ç¿ëÀÚ s2À»(¸¦) ±×·ì sales¿¡¼­ Á¦°ÅÇÏ´Â Áß
+ì‚¬ìš©ì s2ì„(ë¥¼) ê·¸ë£¹ salesì—ì„œ ì œê±°í•˜ëŠ” ì¤‘
 [root@linux-1 ~]# gpasswd -d s3 sales
-»ç¿ëÀÚ s3À»(¸¦) ±×·ì sales¿¡¼­ Á¦°ÅÇÏ´Â Áß
+ì‚¬ìš©ì s3ì„(ë¥¼) ê·¸ë£¹ salesì—ì„œ ì œê±°í•˜ëŠ” ì¤‘
 [root@linux-1 ~]# grep sales /etc/group
 sales:x:1002:
 [root@linux-1 ~]# gpasswd -d a4 admins
-»ç¿ëÀÚ a4À»(¸¦) ±×·ì admins¿¡¼­ Á¦°ÅÇÏ´Â Áß
-gpasswd: `a4' »ç¿ëÀÚ´Â 'admins'ÀÇ ¸â¹ö°¡ ¾Æ´Õ´Ï´Ù
+ì‚¬ìš©ì a4ì„(ë¥¼) ê·¸ë£¹ adminsì—ì„œ ì œê±°í•˜ëŠ” ì¤‘
+gpasswd: `a4' ì‚¬ìš©ìëŠ” 'admins'ì˜ ë©¤ë²„ê°€ ì•„ë‹™ë‹ˆë‹¤
 [root@linux-1 ~]# grep admins /etc/group
 admins:x:1003:a1,a2
 [root@linux-1 ~]# gpasswd -d a1 admins
-»ç¿ëÀÚ a1À»(¸¦) ±×·ì admins¿¡¼­ Á¦°ÅÇÏ´Â Áß
+ì‚¬ìš©ì a1ì„(ë¥¼) ê·¸ë£¹ adminsì—ì„œ ì œê±°í•˜ëŠ” ì¤‘
 [root@linux-1 ~]# gpasswd -d a2 admins
-»ç¿ëÀÚ a2À»(¸¦) ±×·ì admins¿¡¼­ Á¦°ÅÇÏ´Â Áß
+ì‚¬ìš©ì a2ì„(ë¥¼) ê·¸ë£¹ adminsì—ì„œ ì œê±°í•˜ëŠ” ì¤‘
 [root@linux-1 ~]# grep admins /etc/group
 admins:x:1003:
 [root@linux-1 ~]# gpasswd -a a1 admins
-»ç¿ëÀÚ a1À»(¸¦) admins ±×·ì¿¡ µî·Ï Áß
+ì‚¬ìš©ì a1ì„(ë¥¼) admins ê·¸ë£¹ì— ë“±ë¡ ì¤‘
 [root@linux-1 ~]# usermod -aG admins a2
 [root@linux-1 ~]# grep admins /etc/group
 admins:x:1003:a1,a2
@@ -1427,9 +1427,9 @@ admins:x:1003:a1,a2
 [root@linux-1 ~]# grep wheel /etc/group
 wheel:x:10:student
 [root@linux-1 ~]# groupadd wheel
-groupadd: 'wheel' ±×·ìÀÌ ÀÌ¹Ì ÀÖ½À´Ï´Ù
+groupadd: 'wheel' ê·¸ë£¹ì´ ì´ë¯¸ ìˆìŠµë‹ˆë‹¤
 [root@linux-1 ~]# useradd -aG wheel admin1
-useradd: ºÎÀûÀıÇÑ ¿É¼Ç -- 'a'
+useradd: ë¶€ì ì ˆí•œ ì˜µì…˜ -- 'a'
 Usage: useradd [options] LOGIN
        useradd -D
        useradd -D [options]
@@ -1471,11 +1471,11 @@ Options:
 [root@linux-1 ~]# useradd -G wheel admin1
 [root@linux-1 ~]# c
 [root@linux-1 ~]# passwd admin1
-admin1 »ç¿ëÀÚÀÇ ºñ¹Ğ ¹øÈ£ º¯°æ Áß
-»õ ¾ÏÈ£:
-Àß¸øµÈ ¾ÏÈ£: ¾ÏÈ£°¡ ¾ÕµÚ ¾î´ÀÂÊ¿¡¼­ ÀĞ¾îµµ °°Àº ¹®¸ÆÀÓ
-»õ ¾ÏÈ£ ÀçÀÔ·Â:
-passwd: ¸ğµç ÀÎÁõ ÅäÅ«ÀÌ ¼º°øÀûÀ¸·Î ¾÷µ¥ÀÌÆ® µÇ¾ú½À´Ï´Ù.
+admin1 ì‚¬ìš©ìì˜ ë¹„ë°€ ë²ˆí˜¸ ë³€ê²½ ì¤‘
+ìƒˆ ì•”í˜¸:
+ì˜ëª»ëœ ì•”í˜¸: ì•”í˜¸ê°€ ì•ë’¤ ì–´ëŠìª½ì—ì„œ ì½ì–´ë„ ê°™ì€ ë¬¸ë§¥ì„
+ìƒˆ ì•”í˜¸ ì¬ì…ë ¥:
+passwd: ëª¨ë“  ì¸ì¦ í† í°ì´ ì„±ê³µì ìœ¼ë¡œ ì—…ë°ì´íŠ¸ ë˜ì—ˆìŠµë‹ˆë‹¤.
 [root@linux-1 ~]# grep wheel
 ^C
 [root@linux-1 ~]# grep wheel /etc/group
@@ -1483,13 +1483,13 @@ wheel:x:10:student,admin1
 [root@linux-1 ~]# pwd
 /root
 [root@linux-1 ~]# passwd admin2
-passwd: ¾Ë ¼ö ¾ø´Â »ç¿ëÀÚ ÀÌ¸§ 'admin2'.
+passwd: ì•Œ ìˆ˜ ì—†ëŠ” ì‚¬ìš©ì ì´ë¦„ 'admin2'.
 [root@linux-1 ~]# grep wheel /etc/passwd
 [root@linux-1 ~]# su - admin1
 [admin1@linux-1 ~]$ pwd
 /home/admin1
 [admin1@linux-1 ~]$ exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 [root@linux-1 ~]# pwd
 /root
 [root@linux-1 ~]# c
@@ -1497,12 +1497,12 @@ passwd: ¾Ë ¼ö ¾ø´Â »ç¿ëÀÚ ÀÌ¸§ 'admin2'.
 [admin1@linux-1 ~]$ pwd
 /home/admin1
 [admin1@linux-1 ~]$ su - root
-¾ÏÈ£:
+ì•”í˜¸:
 [root@linux-1 ~]# exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 [admin1@linux-1 ~]$ useradd test1
 useradd: Permission denied.
-useradd: /etc/passwdÀ»(¸¦) Àá±Û ¼ö ¾ø½À´Ï´Ù. ³ªÁß¿¡ ´Ù½Ã ½ÃµµÇÏ½Ê½Ã¿À.
+useradd: /etc/passwdì„(ë¥¼) ì ê¸€ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë‚˜ì¤‘ì— ë‹¤ì‹œ ì‹œë„í•˜ì‹­ì‹œì˜¤.
 [admin1@linux-1 ~]$ c
 bash: c: command not found...
 [admin1@linux-1 ~]$ c
@@ -1510,14 +1510,14 @@ bash: c: command not found...
 [admin1@linux-1 ~]$ clear
 [admin1@linux-1 ~]$ sudo useradd test1
 
-·ÎÄÃ ½Ã½ºÅÛ °ü¸®ÀÚ¿¡°Ô ÀÏ¹İÀûÀÎ ÁöÄ§À» ¹Ş¾ÒÀ¸¸®¶ó ¹Ï½À´Ï´Ù.
-º¸Åë ¼¼°¡Áö·Î ¿ä¾àÇÕ´Ï´Ù:
+ë¡œì»¬ ì‹œìŠ¤í…œ ê´€ë¦¬ìì—ê²Œ ì¼ë°˜ì ì¸ ì§€ì¹¨ì„ ë°›ì•˜ìœ¼ë¦¬ë¼ ë¯¿ìŠµë‹ˆë‹¤.
+ë³´í†µ ì„¸ê°€ì§€ë¡œ ìš”ì•½í•©ë‹ˆë‹¤:
 
-    #1) Å¸ÀÎÀÇ »ç»ıÈ°À» Á¸ÁßÇÏ½Ê½Ã¿À.
-    #2) ÀÔ·ÂÇÏ±â Àü¿¡ ÇÑ ¹ø ´õ »ı°¢ÇÏ½Ê½Ã¿À.
-    #3) ¸·°­ÇÑ Èû¿¡´Â »ó´çÇÑ Ã¥ÀÓÀÌ µÚµû¸¨´Ï´Ù.
+    #1) íƒ€ì¸ì˜ ì‚¬ìƒí™œì„ ì¡´ì¤‘í•˜ì‹­ì‹œì˜¤.
+    #2) ì…ë ¥í•˜ê¸° ì „ì— í•œ ë²ˆ ë” ìƒê°í•˜ì‹­ì‹œì˜¤.
+    #3) ë§‰ê°•í•œ í˜ì—ëŠ” ìƒë‹¹í•œ ì±…ì„ì´ ë’¤ë”°ë¦…ë‹ˆë‹¤.
 
-[sudo] admin1ÀÇ ¾ÏÈ£: 
+[sudo] admin1ì˜ ì•”í˜¸: 
 [admin1@linux-1 ~]$ tail -5 /etc/passwd
 a3:x:1007:1009::/home/a3:/bin/bash
 a4:x:1008:1010::/home/a4:/bin/bash
@@ -1532,7 +1532,7 @@ admin1:x:1010:1012::/home/admin1:/bin/bash
 test1:x:1011:1013::/home/test1:/bin/bash
 test2:x:1012:1014::/home/test2:/bin/bash
 [admin1@linux-1 ~]$ cat /etc/shadow
-cat: /etc/shadow: Çã°¡ °ÅºÎ
+cat: /etc/shadow: í—ˆê°€ ê±°ë¶€
 [admin1@linux-1 ~]$ sudo cat /etc/shadow
 root:$6$PCVhhWSC/RrnYFZS$5NYKtUnZXOIqhk5X5HaLrFujiYdXQmD3ZWA2R1XLMBtJIq61oW0XMvQ8jzTepa3GEKDBa0L8lI7NhUlh6PnOL.::0:99999:7:::
 bin:*:19469:0:99999:7:::
@@ -1584,7 +1584,7 @@ admin1:$6$r1duP/sHruoR2yfp$eERBd6Icg.LTVsVuH/SHlm.wCMx8fd3hU0aL0GCI59rzw25eWy7HL
 test1:!!:19724:0:99999:7:::
 test2:!!:19724:0:99999:7:::
 [admin1@linux-1 ~]$ exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 [root@linux-1 ~]# cat /etc/shadow
 root:$6$PCVhhWSC/RrnYFZS$5NYKtUnZXOIqhk5X5HaLrFujiYdXQmD3ZWA2R1XLMBtJIq61oW0XMvQ8jzTepa3GEKDBa0L8lI7NhUlh6PnOL.::0:99999:7:::
 bin:*:19469:0:99999:7:::
@@ -1639,11 +1639,11 @@ test2:!!:19724:0:99999:7:::
 [root@linux-1 ~]# grep /etc/passwd
 ^[^C
 [root@linux-1 ~]# passwd admin2
-admin2 »ç¿ëÀÚÀÇ ºñ¹Ğ ¹øÈ£ º¯°æ Áß
-»õ ¾ÏÈ£:
-Àß¸øµÈ ¾ÏÈ£: ¾ÏÈ£°¡ ¾ÕµÚ ¾î´ÀÂÊ¿¡¼­ ÀĞ¾îµµ °°Àº ¹®¸ÆÀÓ
-»õ ¾ÏÈ£ ÀçÀÔ·Â:
-passwd: ¸ğµç ÀÎÁõ ÅäÅ«ÀÌ ¼º°øÀûÀ¸·Î ¾÷µ¥ÀÌÆ® µÇ¾ú½À´Ï´Ù.
+admin2 ì‚¬ìš©ìì˜ ë¹„ë°€ ë²ˆí˜¸ ë³€ê²½ ì¤‘
+ìƒˆ ì•”í˜¸:
+ì˜ëª»ëœ ì•”í˜¸: ì•”í˜¸ê°€ ì•ë’¤ ì–´ëŠìª½ì—ì„œ ì½ì–´ë„ ê°™ì€ ë¬¸ë§¥ì„
+ìƒˆ ì•”í˜¸ ì¬ì…ë ¥:
+passwd: ëª¨ë“  ì¸ì¦ í† í°ì´ ì„±ê³µì ìœ¼ë¡œ ì—…ë°ì´íŠ¸ ë˜ì—ˆìŠµë‹ˆë‹¤.
 [root@linux-1 ~]# grep wheel /etc/group
 wheel:x:10:student,admin1
 [root@linux-1 ~]# grep  /etc/group
@@ -1652,15 +1652,15 @@ wheel:x:10:student,admin1
 [root@linux-1 ~]# su - admin2
 [admin2@linux-1 ~]$ sudo useradd admin2
 
-·ÎÄÃ ½Ã½ºÅÛ °ü¸®ÀÚ¿¡°Ô ÀÏ¹İÀûÀÎ ÁöÄ§À» ¹Ş¾ÒÀ¸¸®¶ó ¹Ï½À´Ï´Ù.
-º¸Åë ¼¼°¡Áö·Î ¿ä¾àÇÕ´Ï´Ù:
+ë¡œì»¬ ì‹œìŠ¤í…œ ê´€ë¦¬ìì—ê²Œ ì¼ë°˜ì ì¸ ì§€ì¹¨ì„ ë°›ì•˜ìœ¼ë¦¬ë¼ ë¯¿ìŠµë‹ˆë‹¤.
+ë³´í†µ ì„¸ê°€ì§€ë¡œ ìš”ì•½í•©ë‹ˆë‹¤:
 
-    #1) Å¸ÀÎÀÇ »ç»ıÈ°À» Á¸ÁßÇÏ½Ê½Ã¿À.
-    #2) ÀÔ·ÂÇÏ±â Àü¿¡ ÇÑ ¹ø ´õ »ı°¢ÇÏ½Ê½Ã¿À.
-    #3) ¸·°­ÇÑ Èû¿¡´Â »ó´çÇÑ Ã¥ÀÓÀÌ µÚµû¸¨´Ï´Ù.
+    #1) íƒ€ì¸ì˜ ì‚¬ìƒí™œì„ ì¡´ì¤‘í•˜ì‹­ì‹œì˜¤.
+    #2) ì…ë ¥í•˜ê¸° ì „ì— í•œ ë²ˆ ë” ìƒê°í•˜ì‹­ì‹œì˜¤.
+    #3) ë§‰ê°•í•œ í˜ì—ëŠ” ìƒë‹¹í•œ ì±…ì„ì´ ë’¤ë”°ë¦…ë‹ˆë‹¤.
 
-[sudo] admin2ÀÇ ¾ÏÈ£: 
-admin2Àº(´Â) sudoers ¼³Á¤ ÆÄÀÏ¿¡ ¾ø½À´Ï´Ù.  ÀÌ ½Ãµµ¸¦ º¸°íÇÕ´Ï´Ù.
+[sudo] admin2ì˜ ì•”í˜¸: 
+admin2ì€(ëŠ”) sudoers ì„¤ì • íŒŒì¼ì— ì—†ìŠµë‹ˆë‹¤.  ì´ ì‹œë„ë¥¼ ë³´ê³ í•©ë‹ˆë‹¤.
 [admin2@linux-1 ~]$ ls /etc
 DIR_COLORS               chromium         dnsmasq.conf   group-         libibverbs.d              multipath          profile                 shadow              tpm2-tss
 DIR_COLORS.lightbgcolor  chrony.conf      dnsmasq.d      grub.d         libnl                     nanorc             profile.d               shadow-             trusted-key.key
@@ -1694,17 +1694,17 @@ brltty.conf              dnf              group          libblockdev    mtab    
 sudoers
 sudoers.d
 [admin2@linux-1 ~]$ exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 [root@linux-1 ~]# usermod -aG wheel admin2
 [root@linux-1 ~]# grep wheel /etc/group
 wheel:x:10:student,admin1,admin2
 [root@linux-1 ~]# sudo useradd test5
 [root@linux-1 ~]# su - admin2
 [admin2@linux-1 ~]$ sudo useradd test5
-[sudo] admin2ÀÇ ¾ÏÈ£: 
-useradd: 'test5' »ç¿ëÀÚ°¡ ÀÌ¹Ì ÀÖ½À´Ï´Ù
+[sudo] admin2ì˜ ì•”í˜¸: 
+useradd: 'test5' ì‚¬ìš©ìê°€ ì´ë¯¸ ìˆìŠµë‹ˆë‹¤
 [admin2@linux-1 ~]$ exit
-·Î±×¾Æ¿ô
+ë¡œê·¸ì•„ì›ƒ
 [root@linux-1 ~]# c
 [root@linux-1 ~]# grep wheel /etc/group
 wheel:x:10:student,admin1,admin2
@@ -1713,11 +1713,11 @@ bash: li: command not found...
 [root@linux-1 ~]# ls /etc/group
 /etc/group
 [root@linux-1 ~]# ll /etc/group
--rw-r--r--. 1 root root 1043  1¿ù  2 13:16 /etc/group
+-rw-r--r--. 1 root root 1043  1ì›”  2 13:16 /etc/group
 [root@linux-1 ~]# ls -l /etc/group
--rw-r--r--. 1 root root 1043  1¿ù  2 13:16 /etc/group
+-rw-r--r--. 1 root root 1043  1ì›”  2 13:16 /etc/group
 [root@linux-1 ~]# ls -l /etc/sudoers
--r--r-----. 1 root root 4328  4¿ù 24  2023 /etc/sudoers
+-r--r-----. 1 root root 4328  4ì›” 24  2023 /etc/sudoers
 [root@linux-1 ~]# ls -a /etc/group
 /etc/group
 [root@linux-1 ~]# cat /etc/group
