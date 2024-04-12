@@ -6,7 +6,7 @@ yum install -y httpd
 systemctl start httpd
 systemctl enable httpd
 cat <<EOF > /var/www/html/index.html
-<h1>서울 웹 서버에 오신 것을 환영합니다.</h1>
+<h1>환영합니다! 이곳은 서울 웹 사이트 입니다.</h1>
 <h3>가용영역: ${availability_zone}</h3>
 <h3>${instance_id}</h3>
 <h3>${private_ip}</h3>
